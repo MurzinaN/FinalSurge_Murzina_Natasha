@@ -1,6 +1,5 @@
 package tests;
 
-import com.github.javafaker.Faker;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
@@ -8,15 +7,20 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import pages.HomePage;
 import pages.LoginPage;
+import pages.LogoutPage;
 
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
-    protected final static String USER_NAME = "solodchenko13@gmail.com";
+    protected final static String EMAIL = "solodchenko13@gmail.com";
     protected final static String PASSWORD = "qa19QA19";
     protected WebDriver driver;
-    protected pages.LoginPage LoginPage;
+    protected LoginPage loginPage;
+    protected HomePage homePage;
+    protected LogoutPage logoutPage;
+
     @BeforeClass(alwaysRun = true)
     public void setUp(ITestContext testContext) throws Exception {
         String browserName = System.getProperty("browser", "chrome");
@@ -25,15 +29,17 @@ public class BaseTest {
         driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         testContext.setAttribute("driver", driver);
-        LoginPage = new LoginPage(driver);
+        loginPage = new LoginPage(driver);
+        homePage = new HomePage(driver);
+        logoutPage = new LogoutPage(driver);
     }
 
     @BeforeMethod(alwaysRun = true)
     public void navigate() {
-        LoginPage.open();
+        loginPage.open();
     }
 
-  /*  @AfterMethod(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void clearCookies() {
         driver.manage().deleteAllCookies();
         ((JavascriptExecutor) driver).executeScript(String.format("window.localStorage.clear();"));
@@ -43,5 +49,5 @@ public class BaseTest {
     @AfterClass(alwaysRun = true)
     public void finish() {
         this.driver.quit();
-    }*/
+    }
 }

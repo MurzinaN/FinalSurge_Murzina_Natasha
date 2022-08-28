@@ -35,8 +35,7 @@ public abstract class BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
-    public void jsClick(WebElement element) {
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].click();", element);
+    public void scrollIntoView(WebElement element) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 }
