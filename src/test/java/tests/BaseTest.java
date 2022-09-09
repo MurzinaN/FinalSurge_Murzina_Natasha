@@ -39,15 +39,15 @@ public class BaseTest {
         loginPage.open();
     }
 
-    @AfterMethod(alwaysRun = true)
+  @AfterMethod(alwaysRun = true)
     public void clearCookies() {
         driver.manage().deleteAllCookies();
         ((JavascriptExecutor) driver).executeScript(String.format("window.localStorage.clear();"));
         ((JavascriptExecutor) driver).executeScript(String.format("window.sessionStorage.clear();"));
     }
 
-    @AfterClass(alwaysRun = true)
+     /* @AfterClass(alwaysRun = true)
     public void finish() {
         this.driver.quit();
-    }
+    }*/
 }

@@ -41,4 +41,23 @@ public class WorkoutQuickFactory {
                 .build();
     }
 
+    public static WorkoutQuick copyWorkoutQuick(String workoutName, ActivityType activityType, String workoutDescription) {
+        return WorkoutQuick.builder()
+                .workoutName(workoutName)
+                .activityType(activityType)
+                .workoutDescription(workoutDescription)
+                .build();
+    }
+
+    public static WorkoutQuick uploadWorkoutQuick() {
+        return WorkoutQuick.builder()
+                .workoutName("OneTraining")
+                .activityType(ActivityType.RUN_HILLS)
+                .distance("6.60")
+                .distanceType(DistanceType.MI)
+                .duration("02:33:31")
+                .paceType(PaceType.MIN_MI)
+                .build();
+    }
+
 }

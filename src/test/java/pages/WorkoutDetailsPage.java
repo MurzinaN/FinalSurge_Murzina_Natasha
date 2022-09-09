@@ -32,11 +32,11 @@ public class WorkoutDetailsPage extends BasePage {
     public WorkoutQuick getWorkoutQuickInfo() {
         log.info("Filling form WorkoutQuick with recived data");
         WorkoutQuick.WorkoutQuickBuilder workoutQuickBuilder = WorkoutQuick.builder();
-        if (isElementPresent(WORKOUT_NAME_LOCATOR) == true) {
+        if (isElementPresentByLocator(WORKOUT_NAME_LOCATOR) == true) {
             String workoutName = driver.findElement(WORKOUT_NAME_LOCATOR).getText();
             workoutQuickBuilder.workoutName(workoutName);
         }
-        if (isElementPresent(TIME_LOCATOR) == true) {
+        if (isElementPresentByLocator(TIME_LOCATOR) == true) {
             String time = driver.findElement(TIME_LOCATOR).getText();
             if (time.contains(":")) {
                 String[] timeSplit = time.split("- ");
@@ -44,7 +44,7 @@ public class WorkoutDetailsPage extends BasePage {
                 workoutQuickBuilder.timeOfDay(TimeOfDay.fromString(timeOfDay));
             }
         }
-        if (isElementPresent(ACTIVITY_TYPE_LOCATOR) == true) {
+        if (isElementPresentByLocator(ACTIVITY_TYPE_LOCATOR) == true) {
             String activityTypeName = driver.findElement(ACTIVITY_TYPE_LOCATOR).getText();
             if (activityTypeName.contains("-")) {
                 String activityType = activityTypeName.replace(" - ", ": ");
@@ -55,12 +55,12 @@ public class WorkoutDetailsPage extends BasePage {
                 workoutQuickBuilder.activityType(ActivityType.fromString(activityTypeName));
             }
         }
-        if (isElementPresent(DESCRIPTION_LOCATOR) == true) {
+        if (isElementPresentByLocator(DESCRIPTION_LOCATOR) == true) {
             String workoutDescription = driver.findElement(DESCRIPTION_LOCATOR).getText();
             workoutDescription = workoutDescription.replace("Workout Description:\n", "");
             workoutQuickBuilder.workoutDescription(workoutDescription);
         }
-        if (isElementPresent(STATISTIC_LOCATOR) == true) {
+        if (isElementPresentByLocator(STATISTIC_LOCATOR) == true) {
             String statistic = driver.findElement(STATISTIC_LOCATOR).getText();
             statistic = statistic.replace(" ~ ", " ");
             String[] workoutStatistic = statistic.split(" ");
@@ -68,22 +68,22 @@ public class WorkoutDetailsPage extends BasePage {
             workoutQuickBuilder.distanceType(DistanceType.fromString(workoutStatistic[1]));
             workoutQuickBuilder.duration("0" + workoutStatistic[2]);
         }
-        if (isElementPresent(PACE_LOCATOR) == true) {
+        if (isElementPresentByLocator(PACE_LOCATOR) == true) {
             String pace = driver.findElement(PACE_LOCATOR).getText();
             String[] paceType = pace.split(" ");
             workoutQuickBuilder.paceType(PaceType.fromString(paceType[1]));
         }
-        if (isElementPresent(HOW_I_FELT_LOCATOR) == true) {
+        if (isElementPresentByLocator(HOW_I_FELT_LOCATOR) == true) {
             String howIFelt = driver.findElement(HOW_I_FELT_LOCATOR).getText();
             workoutQuickBuilder.howIFelt(HowIFelt.fromString(howIFelt));
         }
-        if (isElementPresent(PERCEIVED_EFFORT_LOCATOR) == true) {
+        if (isElementPresentByLocator(PERCEIVED_EFFORT_LOCATOR) == true) {
             String perceivedEffortText = driver.findElement(PERCEIVED_EFFORT_LOCATOR).getText();
             String[] perceivedEffortSplit = perceivedEffortText.split("  ");
             String perceivedEffort = perceivedEffortSplit[1].replace(" Perceived Effort ", "");
             workoutQuickBuilder.perceivedEffort(PerceivedEffort.fromString(perceivedEffort));
         }
-        if (isElementPresent(POST_WORKOUT_LOCATOR) == true) {
+        if (isElementPresentByLocator(POST_WORKOUT_LOCATOR) == true) {
             driver.findElement(POST_WORKOUT_LOCATOR).click();
             String postWorkoutNotesResults = driver.findElement(POST_WORKOUT_NOTES_LOCATOR).getText();
             workoutQuickBuilder.postWorkoutNotes_Results(postWorkoutNotesResults);

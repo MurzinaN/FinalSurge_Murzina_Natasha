@@ -20,12 +20,13 @@ public abstract class BasePage {
 
     public abstract void waitForPageLoaded();
 
-    public boolean isElementPresent(By locator) {
+    public boolean isElementPresentByLocator(By locator) {
         driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         boolean isPresent = !driver.findElements(locator).isEmpty();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return isPresent;
     }
+
 
     public void waitForElementDisplayed(By locator) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
@@ -38,4 +39,5 @@ public abstract class BasePage {
     public void scrollIntoView(WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
+
 }

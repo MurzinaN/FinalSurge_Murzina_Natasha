@@ -18,8 +18,8 @@ public class WorkoutQuickAddModal extends BaseModal {
     private static final By PACE_TYPE = By.xpath("//select[@id='PaceType']");
     private static final By HOW_I_FELT = By.xpath("//label[text()='How I Felt']/ancestor::div[@class='span6']/descendant::select");
     private static final By PERCEIVED_EFFORT = By.xpath("//label[text()='Perceived Effort']/ancestor::div[@class='span6']/descendant::select");
-    private static final By SAVE_BUTTON = By.id("saveButton");
     private static final By CANCEL_BUTTON = By.id("CancelClose");
+    private static final By WORKOUT_DATE_LOCATOR = By.id("WorkoutDate");
 
     public WorkoutQuickAddModal(WebDriver driver) {
         super(driver);
@@ -68,11 +68,10 @@ public class WorkoutQuickAddModal extends BaseModal {
         new Textarea(driver, "Post Workout Notes/Results").setValue(inputWorkoutQuick.getPostWorkoutNotes_Results());
     }
 
-    public void saveButtonClick() {
-        driver.findElement(SAVE_BUTTON).click();
-    }
-
     public void cancelButtonClick() {
         driver.findElement(CANCEL_BUTTON).click();
+    }
+    public void inputNewDate(int month, int day, int year){
+        driver.findElement(WORKOUT_DATE_LOCATOR).sendKeys( month +"/"+ day+"/"+ year);
     }
 }
