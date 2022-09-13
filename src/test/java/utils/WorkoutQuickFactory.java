@@ -49,6 +49,14 @@ public class WorkoutQuickFactory {
                 .build();
     }
 
+    public static WorkoutQuick beforeUploadWorkoutQuick() {
+        return WorkoutQuick.builder()
+                .workoutName("OneTraining")
+                .activityType(ActivityType.RUN_HILLS)
+                .build();
+    }
+
+
     public static WorkoutQuick uploadWorkoutQuick() {
         return WorkoutQuick.builder()
                 .workoutName("OneTraining")

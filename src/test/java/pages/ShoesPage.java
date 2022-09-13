@@ -18,6 +18,9 @@ public class ShoesPage extends BasePage{
     private final static String DATA_LOCATOR = "//a[text()='%s']/ancestor::strong/parent::td/descendant::span/strong[contains(text(),'%s')]/parent::span";
     private final static String DISTANCE_ALERT_LOCATOR = "//a[text()='%s']/ancestor::strong/parent::td/descendant::span[contains(text(),'Alert')]";
     private final static String STARTING_DISTANCE_LOCATOR = "//a[text()='%s']/ancestor::tr/descendant::td[@style]/span[contains(text(),'mi')]";
+    private final static String SHOE_NAME_LOCATOR = "//a[text()='%s']";
+    private final static By DELETE_LOCATOR = By.xpath("//a[@id='del-shoe']");
+    private final static By OK_BUTTON_LOCATOR = By.xpath("//a[@data-handler='1']");
     public ShoesPage(WebDriver driver) {
         super(driver);
     }
@@ -35,27 +38,9 @@ public class ShoesPage extends BasePage{
         String textReplace = textSplit[0].replace(shoeName+" ", "");
         textReplace = textReplace.replace("(", "");
         textReplace = textReplace.replace(")", "");
-        String brand;
-        String model;
-        if (textReplace.contains("New Balance") || textReplace.contains("Newton Running") || textReplace.contains("Pearl Izumi") ||
-                textReplace.contains("UK Gear") || textReplace.contains("Under Armour") || textReplace.contains("Vibram FiveFingers")){
-            String[] brandAndModel = textReplace.split(" ", 3);
-            brand = brandAndModel[0]+" "+brandAndModel[1];
-            model = brandAndModel[2];
-        }else {
-            if (textReplace.contains("Hoka One One")){
-                String[] brandAndModel = textReplace.split(" ", 4);
-                brand = brandAndModel[0]+" "+brandAndModel[1]+" "+brandAndModel[2];
-                model = brandAndModel[3];
-            }else {
-                String[] brandAndModel = textReplace.split(" ", 2);
-                brand = brandAndModel[0];
-                model = brandAndModel[1];
-            }
-        }
+
         newShoeBuilder.shoeName(shoeName);
-        newShoeBuilder.brand(Brand.fromString(brand));
-        newShoeBuilder.model(model);
+        newShoeBuilder.brandAndModel(textReplace);
         newShoeBuilder.notes(textSplit[2]);
         if (isElementPresentByLocator(By.xpath(String.format(DATA_LOCATOR, shoeName, "Purchased"))) == true) {
             String datePurchasedText = driver.findElement(By.xpath(String.format(DATA_LOCATOR, shoeName, "Purchased"))).getText();
@@ -86,35 +71,11 @@ public class ShoesPage extends BasePage{
         }
         return newShoeBuilder.build();
     }
-    public void get(String shoeName1){
-        String text = driver.findElement(By.xpath(String.format(NAME_LOCATOR, shoeName1))).getText();
-        String[] textSplit = text.split("\n");
-        String textReplace = textSplit[0].replace(shoeName1+" ", "");
-        textReplace = textReplace.replace("(", "");
-        textReplace = textReplace.replace(")", "");
-        String brand;
-        String model;
-        if (textReplace.contains("New Balance") || textReplace.contains("Newton Running") || textReplace.contains("Pearl Izumi") ||
-                textReplace.contains("UK Gear") || textReplace.contains("Under Armour") || textReplace.contains("Vibram FiveFingers")){
-            String[] brandAndModel = textReplace.split(" ", 3);
-          brand = brandAndModel[0]+" "+brandAndModel[1];
-          model = brandAndModel[2];
-        }else {
-            if (textReplace.contains("Hoka One One")){
-                String[] brandAndModel = textReplace.split(" ", 4);
-                brand = brandAndModel[0]+" "+brandAndModel[1]+" "+brandAndModel[2];
-                model = brandAndModel[3];
-            }else {
-                String[] brandAndModel = textReplace.split(" ", 2);
-                brand = brandAndModel[0];
-                model = brandAndModel[1];
-            }
-        }
-        System.out.println(brand);
-        System.out.println(model);
-        /*System.out.println(textSplit[0]);
-        System.out.println(textSplit[1]);
-        System.out.println(textSplit[2]);*/
-
+    public void clickDelete(String shoeName){
+        driver.findElement(By.xpath(String.format(SHOE_NAME_LOCATOR, shoeName))).click();
+        driver.findElement(DELETE_LOCATOR).click();
+        WebElement ok = driver.findElement(OK_BUTTON_LOCATOR);
+        jsClick(ok);
     }
+
 }

@@ -3,10 +3,7 @@ package tests;
 import io.qameta.allure.Description;
 import models.DailyVitals;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.DailyVitalsPage;
 import pages.HomePage;
 import pages.modals.DailyVitalsAddModal;
@@ -16,13 +13,15 @@ import utils.DailyVitalsFactory;
 
 public class DailyVitalsTest extends BaseTest {
     public final static String ITEM_NAVIGATION_MENU = "Daily Vitals";
-    protected final static int DAY = 2;
     protected final static int MONTH = 9;
     protected final static int YEAR = 2022;
     public final static String ERROR_MESSAGE_SLEEP_HOURS = "*Sleep Hours cannot be greater than 24.00.";
     public final static String ERROR_MESSAGE_WATER = "*Water % cannot be greater than 100.00.";
     public final static String ERROR_MESSAGE_BODY_FAT = "*Body Fat % cannot be greater than 99.00.";
     public final static String ERROR_MESSAGE_CALORIES = "*Calories cannot be greater than 20000.";
+    int dailyVitalsDay;
+    int dailyVitalsMonth;
+    int dailyVitalsYear;
     private HomePage homePage;
     private DailyVitalsPage dailyVitalsPage;
     private DailyVitalsAddModal dailyVitalsAddModal;
@@ -38,11 +37,14 @@ public class DailyVitalsTest extends BaseTest {
         loginPage.login(EMAIL, PASSWORD);
     }
 
-    @Test(groups = {"regression"}, dataProvider = "AddDailyVitalsTestData")
+    @Test(groups = {"regression", "addDailyVitals"}, dataProvider = "AddDailyVitalsTestData")
     @Description("Add daily vitals in table")
     public void addDailyVitalsTest(int month, int day, int year, DailyVitals newDailyVitals) throws InterruptedException{
         homePage.clickItemNavigationMenu(ITEM_NAVIGATION_MENU);
         dailyVitalsPage.clickDate(month, day, year);
+        dailyVitalsDay = day;
+        dailyVitalsMonth = month;
+        dailyVitalsYear = year;
         dailyVitalsAddModal.fillForm(newDailyVitals);
         dailyVitalsAddModal.saveButtonClick();
         dailyVitalsAddModal.cancelButtonClick();
@@ -53,8 +55,8 @@ public class DailyVitalsTest extends BaseTest {
     @DataProvider
     public Object[][] AddDailyVitalsTestData() {
         return new Object[][]{
-                { MONTH, 1, YEAR, DailyVitalsFactory.getDailyVitalsAllData()},
-                { MONTH, 2, YEAR, DailyVitalsFactory.getDailyVitalsSomeData()}
+                { MONTH, 10, YEAR, DailyVitalsFactory.getDailyVitalsAllData()},
+                { MONTH, 13, YEAR, DailyVitalsFactory.getDailyVitalsSomeData()}
         };
     }
 
@@ -77,6 +79,12 @@ public class DailyVitalsTest extends BaseTest {
                 { DailyVitalsFactory.getDailyVitalsBodyFat(), ERROR_MESSAGE_BODY_FAT},
                 { DailyVitalsFactory.getDailyVitalsCalories(), ERROR_MESSAGE_CALORIES}
         };
+    }
+    @AfterMethod(onlyForGroups = {"addDailyVitals"})
+    public void clearDataDailyVitals(){
+        dailyVitalsPage.clickDate(dailyVitalsMonth, dailyVitalsDay, dailyVitalsYear);
+        dailyVitalsPage.clickDelete();
+
     }
 
 

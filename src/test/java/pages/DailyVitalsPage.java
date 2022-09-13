@@ -17,6 +17,8 @@ public class DailyVitalsPage extends BasePage{
     private final static String DATE_LOCATOR = "//a[text()='%s/%s/%s']";
     private final static String DATA_LOCATOR = "//a[text()='%s/%s/%s']/parent::td/following-sibling::td";
     private final static String NOTES_LOCATOR = "//a[text()='%s/%s/%s']/parent::td/following-sibling::td/span";
+    private final static By DELETE_LOCATOR = By.xpath("//a[@title='Delete']");
+    private final static By OK_BUTTON_LOCATOR = By.xpath("//a[@data-handler='1']");
     public DailyVitalsPage(WebDriver driver) {
         super(driver);
     }
@@ -120,6 +122,12 @@ public class DailyVitalsPage extends BasePage{
             }
         }
         return dailyVitalsBuilder.build();
+    }
+
+    public void clickDelete(){
+        driver.findElement(DELETE_LOCATOR).click();
+        WebElement ok = driver.findElement(OK_BUTTON_LOCATOR);
+        jsClick(ok);
     }
 
 

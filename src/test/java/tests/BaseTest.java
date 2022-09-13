@@ -10,12 +10,13 @@ import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.LogoutPage;
+import utils.PropertyReader;
 
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
-    protected final static String EMAIL = "solodchenko13@gmail.com";
-    protected final static String PASSWORD = "qa19QA19";
+    protected final static String EMAIL = System.getenv().getOrDefault("EMAIL", PropertyReader.getProperty("finalSurge.email"));
+    protected final static String PASSWORD = System.getenv().getOrDefault("PASSWORD", PropertyReader.getProperty("finalSurge.password"));
     protected WebDriver driver;
     protected LoginPage loginPage;
     protected HomePage homePage;
@@ -46,7 +47,7 @@ public class BaseTest {
         ((JavascriptExecutor) driver).executeScript(String.format("window.sessionStorage.clear();"));
     }
 
-     /* @AfterClass(alwaysRun = true)
+      /*@AfterClass(alwaysRun = true)
     public void finish() {
         this.driver.quit();
     }*/

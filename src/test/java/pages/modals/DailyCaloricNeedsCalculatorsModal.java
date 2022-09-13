@@ -9,8 +9,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 @Log4j2
 public class DailyCaloricNeedsCalculatorsModal extends OthersCalculatorsModal{
-    private final static By todaysCaloricNeedsTableLocator = By.xpath("//*[text()='Non-Activity Calories']/ancestor::table");
+    private final static By TODAYS_CALORIC_NEEDS_TABLE_LOCATOR = By.xpath("//*[text()='Non-Activity Calories']/ancestor::table");
     private static final By CALCULATE_CALORIC_NEEDS_BUTTON = By.id("saveButtonSettings");
+    private final static By TODAYS_CALORIC_NEEDS_TABLE_ROWS_LOCATOR = By.xpath("//th[text()='Non-Activity Calories']/ancestor::table/descendant::tbody/tr");
     public DailyCaloricNeedsCalculatorsModal(WebDriver driver) {
         super(driver);
     }
@@ -34,6 +35,10 @@ public class DailyCaloricNeedsCalculatorsModal extends OthersCalculatorsModal{
         driver.findElement(CALCULATE_CALORIC_NEEDS_BUTTON).click();
     }
     public boolean isTodaysCaloricNeedsTableDisplayed() {
-        return driver.findElement(todaysCaloricNeedsTableLocator).isDisplayed();
+        return driver.findElement(TODAYS_CALORIC_NEEDS_TABLE_LOCATOR).isDisplayed();
+    }
+
+    public boolean isTodaysCaloricNeedsTableRowsDisplayed() {
+        return !driver.findElements(TODAYS_CALORIC_NEEDS_TABLE_ROWS_LOCATOR).isEmpty();
     }
 }

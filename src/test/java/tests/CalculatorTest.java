@@ -46,6 +46,7 @@ public class CalculatorTest extends BaseTest{
         dailyCaloricNeedsCalculatorModal.fillForm(DailyCaloricNeedsCalculatorFactory.getDailyCaloricNeedsCalculator());
         dailyCaloricNeedsCalculatorModal.clickCalculateCaloricNeedsButton();
         Assert.assertTrue(dailyCaloricNeedsCalculatorModal.isTodaysCaloricNeedsTableDisplayed());
+        Assert.assertTrue(dailyCaloricNeedsCalculatorModal.isTodaysCaloricNeedsTableRowsDisplayed());
     }
 
     @Test(groups = {"regression"})
@@ -56,5 +57,7 @@ public class CalculatorTest extends BaseTest{
         paceCalculatorModal.clickCalculatePacesButton();
         Assert.assertTrue(paceCalculatorModal.isPaceChartTableDisplayed());
         Assert.assertTrue(paceCalculatorModal.isPaceSplitsTableDisplayed());
+        Assert.assertTrue(paceCalculatorModal.isPaceChartTableRowsDisplayed());
+        Assert.assertTrue(paceCalculatorModal.isPaceSplitsTableRowsDisplayed());
     }
 }

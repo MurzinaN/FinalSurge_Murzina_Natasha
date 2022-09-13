@@ -1,5 +1,7 @@
 package pages;
 
+import models.WorkoutQuick;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +15,9 @@ public class CalendarPage extends BasePage {
     private final static String VIEW_BUTTON_LOCATOR = "//*[@data-title='%s']/ancestor::div[@data-date='%s/%s/%s']/descendant::a[@role='menuitem' and @class='full-view']";
     private final static String COPY_BUTTON_LOCATOR = "//*[@data-title='%s']/ancestor::div[@data-date='%s/%s/%s']/descendant::a[@role='menuitem' and @class='quick-copy']";
     private final static String UPLOAD_BUTTON_LOCATOR = "//*[@data-title='%s']/ancestor::div[@data-date='%s/%s/%s']/descendant::a[@role='menuitem' and @class='quick-upload']";
-    private final static By calendarTrainingButton = By.xpath("//ul[@id='breadcrumbs']//a[text()='Training Calendar']");
+    private final static String DELETE_BUTTON_LOCATOR = "//*[@data-title='%s']/ancestor::div[@data-date='%s/%s/%s']/descendant::a[@role='menuitem' and @class='quick-delete']";
+    private final static By CALENDAR_TRAINING_BUTTON_LOCATOR = By.xpath("//ul[@id='breadcrumbs']//a[text()='Training Calendar']");
+    private final static By OK_BUTTON_LOCATOR = By.xpath("//a[@data-handler='1']");
     public CalendarPage(WebDriver driver) {
         super(driver);
     }
@@ -42,8 +46,13 @@ public class CalendarPage extends BasePage {
     public void upButtonClick(String name, int month, int day, int year) {
         driver.findElement(By.xpath(String.format(UPLOAD_BUTTON_LOCATOR, name, month, day, year))).click();
     }
+    public void deleteButtonClick(String name, int month, int day, int year) {
+        driver.findElement(By.xpath(String.format(DELETE_BUTTON_LOCATOR, name, month, day, year))).click();
+        WebElement ok = driver.findElement(OK_BUTTON_LOCATOR);
+        jsClick(ok);
+    }
     public void backToCalendar(){
-        driver.findElement(calendarTrainingButton).click();
+        driver.findElement(CALENDAR_TRAINING_BUTTON_LOCATOR).click();
     }
 
 

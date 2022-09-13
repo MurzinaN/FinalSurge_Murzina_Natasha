@@ -3,9 +3,10 @@ package pages;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utils.PropertyReader;
 
 public class LoginPage extends BasePage {
-    private final static String URL = "https://log.finalsurge.com/login.cshtml";
+    private final static String URL = System.getenv().getOrDefault("URL", PropertyReader.getProperty("finalSurge.url"));
     private final static By emailInput = By.cssSelector("input#login_name");
     private final static By passwordInput = By.cssSelector("input#login_password");
     private final static By loginButton = By.xpath("//button[text()='Login']");
