@@ -65,7 +65,7 @@ public class DailyVitalsTest extends BaseTest {
     @Description("Check error message when entering incorrect data in daily vitals")
     public void DailyVitalsWithIncorrectDataTest(DailyVitals newDailyVitals, String errorMessage) throws InterruptedException{
         homePage.clickItemNavigationMenu(ITEM_NAVIGATION_MENU);
-        dailyVitalsPage.clickDate(MONTH, 1, YEAR);
+        dailyVitalsPage.clickDate(MONTH, 20, YEAR);
         dailyVitalsAddModal.fillForm(newDailyVitals);
         dailyVitalsAddModal.saveButtonClick();
         Assert.assertTrue(dailyVitalsAddModal.getErrorMessageText().contains(errorMessage));

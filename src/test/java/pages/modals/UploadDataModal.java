@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class UploadDataModal extends BaseModal {
-    private final static By iframeLocator = By.id("WorkoutUploadiFrame");
-    private final static By InputFile = By.xpath("//input[@name='FileUpload1']");
+    private final static By IFRAME_LOCATOR = By.id("WorkoutUploadiFrame");
+    private final static By INPUT_FILE = By.xpath("//input[@name='FileUpload1']");
 
-    private final static By uploadFileButton = By.xpath("//input[@id='saveButton']");
+    private final static By UPLOAD_FILE_BUTTON = By.xpath("//input[@id='saveButton']");
 
 
     public UploadDataModal(WebDriver driver) {
@@ -20,10 +20,10 @@ public class UploadDataModal extends BaseModal {
     }
 
     public void inputUploadFile(String fileName) {
-        WebElement iframe = driver.findElement(iframeLocator);
+        WebElement iframe = driver.findElement(IFRAME_LOCATOR);
         driver.switchTo().frame(iframe);
-        driver.findElement(InputFile).sendKeys(System.getProperty("user.dir") + "/src/main/resources/" + fileName);
-        driver.findElement(uploadFileButton).click();
+        driver.findElement(INPUT_FILE).sendKeys(System.getProperty("user.dir") + "/src/test/resources/" + fileName);
+        driver.findElement(UPLOAD_FILE_BUTTON).click();
         driver.switchTo().defaultContent();
     }
 }
