@@ -10,7 +10,7 @@ pipeline {
 
     parameters {
      gitParameter branchFilter: 'origin/(.*)', defaultValue: 'main', name: 'BRANCH', type: 'PT_BRANCH'
-     choice(name: 'SUITE_NAME', choices: ['smokeTest.xml', 'negativeTest.xml', 'regressionTest.xml', 'allTests.xml'], description: 'Choice suiteXmlFile')
+     choice(name: 'SUITE_NAME', choices: ['allTests.xml', 'smokeTest.xml', 'negativeTest.xml', 'regressionTest.xml'], description: 'Choice suiteXmlFile')
      choice(name: 'BROWSER', choices: ['chrome', 'firefox'], description: 'Choice browser')
     }
 
@@ -18,7 +18,7 @@ pipeline {
         stage('Run tests') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: "${params.BRANCH}", url: 'https://github.com/MurzinaN/SWAGLABS_Murzina_Natasha.git'
+                git branch: "${params.BRANCH}", url: 'https://github.com/MurzinaN/FinalSurge_Murzina_Natasha.git'
 
                 // Run Maven on a Unix agent.
                bat "mvn -Dmaven.test.failure.ignore=true -DsuiteXmlFile=${params.SUITE_NAME} -Dbrowser=${params.BROWSER} clean test"
