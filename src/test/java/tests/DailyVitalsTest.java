@@ -11,6 +11,7 @@ import utils.DailyVitalsFactory;
 
 
 
+
 public class DailyVitalsTest extends BaseTest {
     public final static String ITEM_NAVIGATION_MENU = "Daily Vitals";
     protected final static int MONTH = 9;

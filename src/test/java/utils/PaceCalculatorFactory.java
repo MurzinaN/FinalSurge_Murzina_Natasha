@@ -1,10 +1,11 @@
 package utils;
 
-import enums.*;
+import enums.DistanceTypePaceCalculator;
 import models.PaceCalculator;
 
+
 public class PaceCalculatorFactory {
-   public static PaceCalculator getPaceCalculator() {
+    public static PaceCalculator getPaceCalculator() {
         return PaceCalculator.builder()
                 .distance("10")
                 .distanceTypePaceCalculator(DistanceTypePaceCalculator.KILOMETERS)

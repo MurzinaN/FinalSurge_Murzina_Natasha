@@ -13,6 +13,7 @@ import pages.modals.UploadDataModal;
 import pages.modals.WorkoutQuickAddModal;
 import utils.WorkoutQuickFactory;
 
+
 public class TrainingTest extends BaseTest{
     protected final static int MONTH = 9;
     protected final static int YEAR = 2022;

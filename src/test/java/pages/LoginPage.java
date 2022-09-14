@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.PropertyReader;
 
+
 public class LoginPage extends BasePage {
     private final static String URL = System.getenv().getOrDefault("URL", PropertyReader.getProperty("finalSurge.url"));
     private final static By emailInput = By.cssSelector("input#login_name");

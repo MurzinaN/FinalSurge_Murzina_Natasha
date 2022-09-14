@@ -7,12 +7,15 @@ import org.openqa.selenium.WebElement;
 
 import java.util.Objects;
 
+
 @Log4j2
-public class InputId extends BaseElement{
+public class InputId extends BaseElement {
     private final static String INPUT_ID_LOCATOR = "%s";
+
     public InputId(WebDriver driver, String label) {
         super(driver, label);
     }
+
     public void setValue(String value) {
         if (Objects.nonNull(value)) {
             WebElement inputElement = driver.findElement(By.id(String.format(INPUT_ID_LOCATOR, label)));

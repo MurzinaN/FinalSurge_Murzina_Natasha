@@ -21,6 +21,7 @@ public enum DistanceTypePaceCalculator {
         return null;
     }
 
+
     public String getName() {
         return this.distanceTypePaceCalculator;
     }

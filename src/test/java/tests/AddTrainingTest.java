@@ -29,6 +29,7 @@ public class AddTrainingTest extends BaseTest {
         workoutDetailsPage = new WorkoutDetailsPage(driver);
     }
 
+
     @BeforeMethod()
     public void login() {
         loginPage.login(EMAIL, PASSWORD);

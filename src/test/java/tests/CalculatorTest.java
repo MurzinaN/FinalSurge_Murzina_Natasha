@@ -13,7 +13,7 @@ import pages.modals.PaceCalculatorModal;
 import utils.DailyCaloricNeedsCalculatorFactory;
 import utils.PaceCalculatorFactory;
 
-public class CalculatorTest extends BaseTest{
+public class CalculatorTest extends BaseTest {
 
     private HomePage homePage;
     private DailyCaloricNeedsCalculatorsModal dailyCaloricNeedsCalculatorModal;
@@ -27,16 +27,19 @@ public class CalculatorTest extends BaseTest{
         othersCalculatorsModal = new OthersCalculatorsModal(driver);
         paceCalculatorModal = new PaceCalculatorModal(driver);
     }
+
     @BeforeMethod()
     public void start() {
         loginPage.login(EMAIL, PASSWORD);
         homePage.clickOthersCalculatorsButton();
         othersCalculatorsModal.switchToIframe();
     }
+
     @AfterMethod()
     public void finish() {
         othersCalculatorsModal.switchToDefaultContent();
     }
+
 
 
     @Test(groups = {"regression"})

@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 
+
 @Log4j2
 public class WorkoutQuickAddModal extends BaseModal {
     private static final By ACTIVITY_TYPE = By.xpath("//label[text()='Activity Type']/following-sibling::select");
@@ -71,7 +72,8 @@ public class WorkoutQuickAddModal extends BaseModal {
     public void cancelButtonClick() {
         driver.findElement(CANCEL_BUTTON).click();
     }
-    public void inputNewDate(int month, int day, int year){
-        driver.findElement(WORKOUT_DATE_LOCATOR).sendKeys( month +"/"+ day+"/"+ year);
+
+    public void inputNewDate(int month, int day, int year) {
+        driver.findElement(WORKOUT_DATE_LOCATOR).sendKeys(month + "/" + day + "/" + year);
     }
 }

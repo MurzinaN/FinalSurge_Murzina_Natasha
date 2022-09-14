@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 
+
 public class CalendarPage extends BasePage {
     private final static String DATE_LOCATOR = "//td[@data-day='%s' and @data-month='%s' and @data-year='%s']";
     private final static String PLUS_BUTTON_LOCATOR = "//td[@data-day='%s' and @data-month='%s' and @data-year='%s']/descendant::i[@class='icon-plus']";

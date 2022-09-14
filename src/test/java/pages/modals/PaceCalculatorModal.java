@@ -37,6 +37,7 @@ public class PaceCalculatorModal extends OthersCalculatorsModal{
         new InputId(driver, "TimeSS").setValue(inputPaceCalculator.getSeconds());
     }
 
+
     public void clickCalculatePacesButton() {
         driver.findElement(CALCULATE_PACES_BUTTON_LOCATOR).click();
     }

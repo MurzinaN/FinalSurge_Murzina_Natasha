@@ -3,6 +3,7 @@ package tests;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
+
 public class Retry implements IRetryAnalyzer {
 
     private static final int MAX_RETRY = 2;

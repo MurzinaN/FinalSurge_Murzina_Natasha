@@ -1,5 +1,6 @@
 package enums;
 
+
 public enum Brand {
     ADIDAS("adidas"),
     ALTRA("Altra"),

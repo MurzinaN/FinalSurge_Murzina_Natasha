@@ -10,6 +10,7 @@ public enum GenderTypeCalculator {
         this.genderTypeCalculator = genderTypeCalculator;
     }
 
+
     public String getName() {
         return genderTypeCalculator;
     }

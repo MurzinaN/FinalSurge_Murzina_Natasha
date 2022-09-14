@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
+
 @Log4j2
 public class DailyVitalsPage extends BasePage{
     private final static String DATE_LOCATOR = "//a[text()='%s/%s/%s']";

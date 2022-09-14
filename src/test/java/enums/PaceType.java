@@ -10,6 +10,7 @@ public enum PaceType {
     MIN_1500_M("min/1500m");
     private final String paceType;
 
+
     PaceType(String paceType) {
         this.paceType = paceType;
     }

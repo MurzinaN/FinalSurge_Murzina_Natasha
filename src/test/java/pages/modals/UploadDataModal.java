@@ -4,11 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class UploadDataModal extends BaseModal{
+public class UploadDataModal extends BaseModal {
     private final static By iframeLocator = By.id("WorkoutUploadiFrame");
     private final static By InputFile = By.xpath("//input[@name='FileUpload1']");
 
     private final static By uploadFileButton = By.xpath("//input[@id='saveButton']");
+
+
     public UploadDataModal(WebDriver driver) {
         super(driver);
     }

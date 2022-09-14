@@ -20,6 +20,7 @@ public class DailyCaloricNeedsCalculatorsModal extends OthersCalculatorsModal{
     }
 
 
+
     public  void fillForm(DailyCaloricNeedsCalculator inputDailyCaloricNeedsCalculator) {
         log.info("Filling form DailyCaloricNeedsCalculator");
         new InputCalculator(driver, "Weight").setValue(inputDailyCaloricNeedsCalculator.getWeight());

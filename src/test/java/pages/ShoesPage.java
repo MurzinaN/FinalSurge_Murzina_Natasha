@@ -12,6 +12,7 @@ import org.yaml.snakeyaml.scanner.Scanner;
 
 import java.util.List;
 
+
 @Log4j2
 public class ShoesPage extends BasePage{
     private final static String NAME_LOCATOR = "//a[text()='%s']/ancestor::strong/parent::td";

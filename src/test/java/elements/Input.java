@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.Objects;
 
+
 @Log4j2
 public class Input extends BaseElement {
     private final static String INPUT_LOCATOR = "//label[text()='%s']/following-sibling::input";

@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
+
 @Log4j2
 public class WorkoutDetailsPage extends BasePage {
     private final static By WORKOUT_NAME_LOCATOR = By.xpath("//div[@class='formSep']/descendant::div[contains(@style, 'clear:')]");
