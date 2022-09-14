@@ -18,6 +18,7 @@ public enum DistanceTypeShoes {
         return null;
     }
 
+
     public String getName() {
         return this.distanceTypeShoes;
     }

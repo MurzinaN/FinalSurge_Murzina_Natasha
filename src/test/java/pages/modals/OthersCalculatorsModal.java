@@ -4,10 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class OthersCalculatorsModal extends BaseModal{
+
+public class OthersCalculatorsModal extends BaseModal {
     protected final static By IFRAME_LOCATOR = By.id("OtherCalciFrame");
     private final static By PACE_CALCULATOR_BUTTON_LOCATOR = By.xpath("//*[text()='Pace Calculator']");
     private final static By CALORIC_NEEDS_BUTTON_LOCATOR = By.xpath("//*[text()='Caloric Needs']");
+
     public OthersCalculatorsModal(WebDriver driver) {
         super(driver);
     }
@@ -28,6 +30,7 @@ public class OthersCalculatorsModal extends BaseModal{
     public void clickCaloricNeedsButton() {
         driver.findElement(CALORIC_NEEDS_BUTTON_LOCATOR).click();
     }
+
     public void clickPaceCalculatorButton() {
         driver.findElement(PACE_CALCULATOR_BUTTON_LOCATOR).click();
     }

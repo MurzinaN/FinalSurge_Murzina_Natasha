@@ -1,5 +1,6 @@
 package enums;
 
+
 public enum DistanceType {
     MI("mi"),
     KM("km"),

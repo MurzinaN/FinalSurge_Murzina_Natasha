@@ -13,4 +13,5 @@ public enum DistanceTypeCalculator {
     public String getName() {
         return distanceTypeCalculator;
     }
+
 }

@@ -14,8 +14,8 @@ public class PaceCalculatorModal extends OthersCalculatorsModal{
     private static final By CALCULATE_PACES_BUTTON_LOCATOR = By.id("saveButtonSettings");
     private final static By PACE_CHART_TABLE_LOCATOR = By.xpath("//h4[text()='Pace Chart']");
     private final static By PACE_SPLITS_TABLE_LOCATOR = By.xpath("//h4[text()='Pace Splits']");
-
-
+    private final static By PACE_CHART_TABLE_ROWS_LOCATOR = By.xpath("//h4[text()='Pace Chart']/parent::div/following-sibling::div/descendant::tbody/tr");
+    private final static By PACE_SPLITS_TABLE_ROWS_LOCATOR = By.xpath("//h4[text()='Pace Splits']/parent::div/following-sibling::div/descendant::tbody/tr");
     public PaceCalculatorModal(WebDriver driver) {
         super(driver);
     }
@@ -37,6 +37,7 @@ public class PaceCalculatorModal extends OthersCalculatorsModal{
         new InputId(driver, "TimeSS").setValue(inputPaceCalculator.getSeconds());
     }
 
+
     public void clickCalculatePacesButton() {
         driver.findElement(CALCULATE_PACES_BUTTON_LOCATOR).click();
     }
@@ -47,5 +48,10 @@ public class PaceCalculatorModal extends OthersCalculatorsModal{
     public boolean isPaceSplitsTableDisplayed() {
         return driver.findElement(PACE_SPLITS_TABLE_LOCATOR).isDisplayed();
     }
-
+    public boolean isPaceChartTableRowsDisplayed() {
+        return !driver.findElements(PACE_CHART_TABLE_ROWS_LOCATOR).isEmpty();
+    }
+    public boolean isPaceSplitsTableRowsDisplayed() {
+        return !driver.findElements(PACE_SPLITS_TABLE_ROWS_LOCATOR).isEmpty();
+    }
 }

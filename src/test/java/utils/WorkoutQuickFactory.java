@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import enums.*;
 import models.WorkoutQuick;
 
+
 public class WorkoutQuickFactory {
     private static final Faker faker = new Faker();
 
@@ -48,6 +49,14 @@ public class WorkoutQuickFactory {
                 .workoutDescription(workoutDescription)
                 .build();
     }
+
+    public static WorkoutQuick beforeUploadWorkoutQuick() {
+        return WorkoutQuick.builder()
+                .workoutName("OneTraining")
+                .activityType(ActivityType.RUN_HILLS)
+                .build();
+    }
+
 
     public static WorkoutQuick uploadWorkoutQuick() {
         return WorkoutQuick.builder()

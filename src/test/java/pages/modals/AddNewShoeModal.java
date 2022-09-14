@@ -8,16 +8,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+
 @Log4j2
-public class AddNewShoeModal extends BaseModal{
+public class AddNewShoeModal extends BaseModal {
 
     private final static By BRAND_INPUT_LOCATOR = By.xpath("//span[text()='Select Brand...']");
-    private final static String BRAND_LOCATOR ="//ul[@class='select2-results']/descendant-or-self::div[@class='select2-result-label' and text()='%s']";
+    private final static String BRAND_LOCATOR = "//ul[@class='select2-results']/descendant-or-self::div[@class='select2-result-label' and text()='%s']";
     private final static By SIZE_LOCATOR = By.id("ShoeSize");
     private final static By STARTING_DISTANCE_LOCATOR = By.id("StartDist");
     private final static By STARTING_DISTANCE_TYPE_LOCATOR = By.id("DistType");
     private final static By DISTANCE_ALERT_TYPE_LOCATOR = By.id("DistAlertType");
     private final static By ADD_SHOE_BUTTON_LOCATOR = By.id("saveButton");
+
     public AddNewShoeModal(WebDriver driver) {
         super(driver);
     }
@@ -27,7 +29,7 @@ public class AddNewShoeModal extends BaseModal{
 
     }
 
-    public  void fillForm(NewShoe inputNewShoe) {
+    public void fillForm(NewShoe inputNewShoe) {
         log.info("Filling form add new shoe");
         new InputId(driver, "ShoeName").setValue(inputNewShoe.getShoeName());
         if (inputNewShoe.getBrand() != null) {

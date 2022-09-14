@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.Objects;
 
+
 @Log4j2
 public class InputDiv extends BaseElement {
     private final static String INPUT_DIV_LOCATOR = "//label[text()='%s']/ancestor::div[@class='span6']/descendant::input";

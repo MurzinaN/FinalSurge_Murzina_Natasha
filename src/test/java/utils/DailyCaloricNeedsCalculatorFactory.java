@@ -5,7 +5,7 @@ import enums.GenderTypeCalculator;
 import enums.HeightTypeCalculator;
 import enums.WeightTypeCalculator;
 import models.DailyCaloricNeedsCalculator;
-import models.DailyVitals;
+
 
 public class DailyCaloricNeedsCalculatorFactory {
     public static DailyCaloricNeedsCalculator getDailyCaloricNeedsCalculator() {

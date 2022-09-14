@@ -1,5 +1,6 @@
 package enums;
 
+
 public enum SleepAmount {
     SELECT("Select..."),
     HARDLY_ANY("Hardly Any"),

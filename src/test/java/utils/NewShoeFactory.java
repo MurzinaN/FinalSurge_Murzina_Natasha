@@ -1,11 +1,10 @@
 package utils;
 
 import enums.Brand;
-import enums.DistanceTypePaceCalculator;
 import enums.DistanceTypeShoes;
 import enums.ShoeSize;
 import models.NewShoe;
-import models.PaceCalculator;
+
 
 public class NewShoeFactory {
     public static NewShoe getNewShoe() {

@@ -1,17 +1,17 @@
 package pages.modals;
 
-import elements.Input;
-import elements.InputDiv;
 import elements.InputId;
 import lombok.extern.log4j.Log4j2;
 import models.DailyVitals;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+
 @Log4j2
-public class DailyVitalsAddModal extends BaseModal{
+public class DailyVitalsAddModal extends BaseModal {
     private static final By CANCEL_BUTTON = By.xpath("//a[text()='Cancel']");
     private static final By ERROR_MESSAGE_LOCATOR = By.xpath("//div[contains(@class, 'alert-error')]");
+
     public DailyVitalsAddModal(WebDriver driver) {
         super(driver);
     }
@@ -20,6 +20,7 @@ public class DailyVitalsAddModal extends BaseModal{
     public void waitForPageLoaded() {
 
     }
+
     public void fillForm(DailyVitals inputDailyVitals) {
         log.info("Filling form DailyVitals");
         new InputId(driver, "Steps").setValue(inputDailyVitals.getSteps());
@@ -51,9 +52,11 @@ public class DailyVitalsAddModal extends BaseModal{
         new InputId(driver, "Diastolic").setValue(inputDailyVitals.getDiastolic());
         new InputId(driver, "HealthNotes").setValue(inputDailyVitals.getHealthNotes());
     }
+
     public void cancelButtonClick() {
         driver.findElement(CANCEL_BUTTON).click();
     }
+
     public String getErrorMessageText() {
         String text = driver.findElement(ERROR_MESSAGE_LOCATOR).getText();
         return text;

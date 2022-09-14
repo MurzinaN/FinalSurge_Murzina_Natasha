@@ -4,6 +4,7 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+
 public class LogoutPage extends BasePage {
     private final static By logoutMessage = By.xpath("//div[contains(@class, 'alert-success')]/strong");
 

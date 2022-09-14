@@ -1,8 +1,12 @@
 package utils;
 
 
-import enums.*;
+import enums.SleepAmount;
+import enums.SleepQuality;
+import enums.StressAmount;
+import enums.WeightType;
 import models.DailyVitals;
+
 
 
 public class DailyVitalsFactory {
@@ -49,16 +53,19 @@ public class DailyVitalsFactory {
                 .sleepHours("30")
                 .build();
     }
+
     public static DailyVitals getDailyVitalsWater() {
         return DailyVitals.builder()
                 .water("120")
                 .build();
     }
+
     public static DailyVitals getDailyVitalsBodyFat() {
         return DailyVitals.builder()
                 .bodyFat("100")
                 .build();
     }
+
     public static DailyVitals getDailyVitalsCalories() {
         return DailyVitals.builder()
                 .caloriesConsumed("25000")

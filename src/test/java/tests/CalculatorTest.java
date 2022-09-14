@@ -13,7 +13,7 @@ import pages.modals.PaceCalculatorModal;
 import utils.DailyCaloricNeedsCalculatorFactory;
 import utils.PaceCalculatorFactory;
 
-public class CalculatorTest extends BaseTest{
+public class CalculatorTest extends BaseTest {
 
     private HomePage homePage;
     private DailyCaloricNeedsCalculatorsModal dailyCaloricNeedsCalculatorModal;
@@ -27,16 +27,19 @@ public class CalculatorTest extends BaseTest{
         othersCalculatorsModal = new OthersCalculatorsModal(driver);
         paceCalculatorModal = new PaceCalculatorModal(driver);
     }
+
     @BeforeMethod()
     public void start() {
         loginPage.login(EMAIL, PASSWORD);
         homePage.clickOthersCalculatorsButton();
         othersCalculatorsModal.switchToIframe();
     }
+
     @AfterMethod()
     public void finish() {
         othersCalculatorsModal.switchToDefaultContent();
     }
+
 
 
     @Test(groups = {"regression"})
@@ -46,6 +49,7 @@ public class CalculatorTest extends BaseTest{
         dailyCaloricNeedsCalculatorModal.fillForm(DailyCaloricNeedsCalculatorFactory.getDailyCaloricNeedsCalculator());
         dailyCaloricNeedsCalculatorModal.clickCalculateCaloricNeedsButton();
         Assert.assertTrue(dailyCaloricNeedsCalculatorModal.isTodaysCaloricNeedsTableDisplayed());
+        Assert.assertTrue(dailyCaloricNeedsCalculatorModal.isTodaysCaloricNeedsTableRowsDisplayed());
     }
 
     @Test(groups = {"regression"})
@@ -56,5 +60,7 @@ public class CalculatorTest extends BaseTest{
         paceCalculatorModal.clickCalculatePacesButton();
         Assert.assertTrue(paceCalculatorModal.isPaceChartTableDisplayed());
         Assert.assertTrue(paceCalculatorModal.isPaceSplitsTableDisplayed());
+        Assert.assertTrue(paceCalculatorModal.isPaceChartTableRowsDisplayed());
+        Assert.assertTrue(paceCalculatorModal.isPaceSplitsTableRowsDisplayed());
     }
 }

@@ -10,6 +10,7 @@ public enum HeightTypeCalculator {
         this.heightTypeCalculator = heightTypeCalculator;
     }
 
+
     public String getName() {
         return heightTypeCalculator;
     }
