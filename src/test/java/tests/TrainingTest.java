@@ -27,7 +27,7 @@ public class TrainingTest extends BaseTest{
     private WorkoutDetailsPage workoutDetailsPage;
     private UploadDataModal uploadDataModal;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void initialise() {
         calendarPage = new CalendarPage(driver);
         workoutQuickAddModal = new WorkoutQuickAddModal(driver);
@@ -35,7 +35,7 @@ public class TrainingTest extends BaseTest{
         uploadDataModal = new UploadDataModal(driver);
     }
 
-    @BeforeMethod()
+    @BeforeMethod(alwaysRun = true)
     public void login() {
         loginPage.login(EMAIL, PASSWORD);
     }

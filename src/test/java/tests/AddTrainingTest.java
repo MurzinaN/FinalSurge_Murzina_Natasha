@@ -22,7 +22,7 @@ public class AddTrainingTest extends BaseTest {
     private WorkoutQuickAddModal workoutQuickAddModal;
     private WorkoutDetailsPage workoutDetailsPage;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void initialise() {
         calendarPage = new CalendarPage(driver);
         workoutQuickAddModal = new WorkoutQuickAddModal(driver);
@@ -30,7 +30,7 @@ public class AddTrainingTest extends BaseTest {
     }
 
 
-    @BeforeMethod()
+    @BeforeMethod(alwaysRun = true)
     public void login() {
         loginPage.login(EMAIL, PASSWORD);
     }
@@ -62,7 +62,7 @@ public class AddTrainingTest extends BaseTest {
     }
 
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void clearDataAddTraining() {
         calendarPage.backToCalendar();
             calendarPage.openMenuTraining(trainingDay, trainingMonth, trainingYear, trainingName);

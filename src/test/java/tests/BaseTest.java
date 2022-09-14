@@ -3,6 +3,7 @@ package tests;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -47,8 +48,8 @@ public class BaseTest {
         ((JavascriptExecutor) driver).executeScript(String.format("window.sessionStorage.clear();"));
     }
 
-      /*@AfterClass(alwaysRun = true)
+      @AfterClass(alwaysRun = true)
     public void finish() {
         this.driver.quit();
-    }*/
+    }
 }

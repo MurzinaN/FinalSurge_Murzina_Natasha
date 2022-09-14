@@ -21,14 +21,14 @@ public class NewShoeTest extends BaseTest{
     private AddNewShoeModal addNewShoeModal;
     private ShoesPage shoesPage;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void initialise() {
         homePage = new HomePage(driver);
         equipmentPage = new EquipmentPage(driver);
         addNewShoeModal = new AddNewShoeModal(driver);
         shoesPage = new ShoesPage(driver);
     }
-    @BeforeMethod()
+    @BeforeMethod(alwaysRun = true)
     public void login() {
         loginPage.login(EMAIL, PASSWORD);
     }
@@ -42,7 +42,7 @@ public class NewShoeTest extends BaseTest{
         addNewShoeModal.clickAddShoeButtonButton();
         Assert.assertEquals(shoesPage.getNewShoeInfo(NewShoeFactory.getNewShoe().getShoeName()), NewShoeFactory.getNewShoe());
     }
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void clearDataNewShoe() {
     shoesPage.clickDelete(NewShoeFactory.getNewShoe().getShoeName());
     }

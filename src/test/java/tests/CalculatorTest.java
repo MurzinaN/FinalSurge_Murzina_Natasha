@@ -20,7 +20,7 @@ public class CalculatorTest extends BaseTest {
     private OthersCalculatorsModal othersCalculatorsModal;
     private PaceCalculatorModal paceCalculatorModal;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void initialise() {
         homePage = new HomePage(driver);
         dailyCaloricNeedsCalculatorModal = new DailyCaloricNeedsCalculatorsModal(driver);
@@ -28,14 +28,14 @@ public class CalculatorTest extends BaseTest {
         paceCalculatorModal = new PaceCalculatorModal(driver);
     }
 
-    @BeforeMethod()
+    @BeforeMethod(alwaysRun = true)
     public void start() {
         loginPage.login(EMAIL, PASSWORD);
         homePage.clickOthersCalculatorsButton();
         othersCalculatorsModal.switchToIframe();
     }
 
-    @AfterMethod()
+    @AfterMethod(alwaysRun = true)
     public void finish() {
         othersCalculatorsModal.switchToDefaultContent();
     }

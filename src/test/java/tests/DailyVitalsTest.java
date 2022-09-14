@@ -27,13 +27,13 @@ public class DailyVitalsTest extends BaseTest {
     private DailyVitalsPage dailyVitalsPage;
     private DailyVitalsAddModal dailyVitalsAddModal;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void initialise() {
         homePage = new HomePage(driver);
         dailyVitalsPage = new DailyVitalsPage(driver);
         dailyVitalsAddModal = new DailyVitalsAddModal(driver);
     }
-    @BeforeMethod()
+    @BeforeMethod(alwaysRun = true)
     public void login() {
         loginPage.login(EMAIL, PASSWORD);
     }
