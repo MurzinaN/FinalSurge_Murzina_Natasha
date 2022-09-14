@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import utils.AllureUtils;
 
 
 @Log4j2
@@ -62,6 +63,7 @@ public class AddNewShoeModal extends BaseModal {
             select.selectByVisibleText(inputNewShoe.getDistanceAlertType().getName());
         }
         new InputId(driver, "ShoeNotes").setValue(inputNewShoe.getNotes());
+        AllureUtils.attachScreenshot(driver);
     }
 
     public void clickAddShoeButtonButton() {

@@ -33,10 +33,6 @@ public abstract class BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
-    public void waitForElementClickable(By locator) {
-        wait.until(ExpectedConditions.elementToBeClickable(locator));
-    }
-
     public void scrollIntoView(WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }

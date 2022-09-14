@@ -43,29 +43,29 @@ public class ShoesPage extends BasePage{
         newShoeBuilder.shoeName(shoeName);
         newShoeBuilder.brandAndModel(textReplace);
         newShoeBuilder.notes(textSplit[2]);
-        if (isElementPresentByLocator(By.xpath(String.format(DATA_LOCATOR, shoeName, "Purchased"))) == true) {
+        if (isElementPresentByLocator(By.xpath(String.format(DATA_LOCATOR, shoeName, "Purchased")))) {
             String datePurchasedText = driver.findElement(By.xpath(String.format(DATA_LOCATOR, shoeName, "Purchased"))).getText();
             String datePurchased = datePurchasedText.replace("Purchased: ", "");
             newShoeBuilder.datePurchased(datePurchased);
         }
-        if (isElementPresentByLocator(By.xpath(String.format(DATA_LOCATOR, shoeName, "Cost"))) == true) {
+        if (isElementPresentByLocator(By.xpath(String.format(DATA_LOCATOR, shoeName, "Cost")))) {
             String costText = driver.findElement(By.xpath(String.format(DATA_LOCATOR, shoeName, "Cost"))).getText();
             String cost = costText.replace("Cost: $", "");
             newShoeBuilder.cost(cost);
         }
-        if (isElementPresentByLocator(By.xpath(String.format(DATA_LOCATOR, shoeName, "Size"))) == true) {
+        if (isElementPresentByLocator(By.xpath(String.format(DATA_LOCATOR, shoeName, "Size")))) {
             String sizeText = driver.findElement(By.xpath(String.format(DATA_LOCATOR, shoeName, "Size"))).getText();
             String size = sizeText.replace("Size: ", "");
             newShoeBuilder.shoeSize(ShoeSize.fromString(size));
         }
-        if (isElementPresentByLocator(By.xpath(String.format(DISTANCE_ALERT_LOCATOR, shoeName))) == true) {
+        if (isElementPresentByLocator(By.xpath(String.format(DISTANCE_ALERT_LOCATOR, shoeName)))) {
             String distanceAlertText = driver.findElement(By.xpath(String.format(DISTANCE_ALERT_LOCATOR, shoeName))).getText();
             String distanceAlert = distanceAlertText.replace("Alert at: ", "");
             String[] distanceAlertAndType = distanceAlert.split(" ");
             newShoeBuilder.distanceAlert(distanceAlertAndType[0]);
             newShoeBuilder.distanceAlertType(DistanceTypeShoes.fromString(distanceAlertAndType[1]));
         }
-        if (isElementPresentByLocator(By.xpath(String.format(STARTING_DISTANCE_LOCATOR, shoeName))) == true) {
+        if (isElementPresentByLocator(By.xpath(String.format(STARTING_DISTANCE_LOCATOR, shoeName)))) {
             String startingDistanceText = driver.findElement(By.xpath(String.format(STARTING_DISTANCE_LOCATOR, shoeName))).getText();
             String startingDistance = startingDistanceText.replace(" mi", "");
             newShoeBuilder.startingDistance(startingDistance);

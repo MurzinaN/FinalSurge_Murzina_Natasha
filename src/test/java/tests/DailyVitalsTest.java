@@ -13,6 +13,7 @@ import utils.DailyVitalsFactory;
 
 
 public class DailyVitalsTest extends BaseTest {
+    private final static String PAST_DAYS_NAME = "This Month";
     public final static String ITEM_NAVIGATION_MENU = "Daily Vitals";
     protected final static int MONTH = 9;
     protected final static int YEAR = 2022;
@@ -36,12 +37,13 @@ public class DailyVitalsTest extends BaseTest {
     @BeforeMethod(alwaysRun = true)
     public void login() {
         loginPage.login(EMAIL, PASSWORD);
+        homePage.clickItemNavigationMenu(ITEM_NAVIGATION_MENU);
+        dailyVitalsPage.selectPastDays(PAST_DAYS_NAME);
     }
 
     @Test(groups = {"regression", "addDailyVitals"}, dataProvider = "AddDailyVitalsTestData")
     @Description("Add daily vitals in table")
     public void addDailyVitalsTest(int month, int day, int year, DailyVitals newDailyVitals) throws InterruptedException{
-        homePage.clickItemNavigationMenu(ITEM_NAVIGATION_MENU);
         dailyVitalsPage.clickDate(month, day, year);
         dailyVitalsDay = day;
         dailyVitalsMonth = month;
@@ -64,7 +66,6 @@ public class DailyVitalsTest extends BaseTest {
     @Test(groups = {"negative"}, dataProvider = "DailyVitalsWithIncorrectDataTestData")
     @Description("Check error message when entering incorrect data in daily vitals")
     public void DailyVitalsWithIncorrectDataTest(DailyVitals newDailyVitals, String errorMessage) throws InterruptedException{
-        homePage.clickItemNavigationMenu(ITEM_NAVIGATION_MENU);
         dailyVitalsPage.clickDate(MONTH, 20, YEAR);
         dailyVitalsAddModal.fillForm(newDailyVitals);
         dailyVitalsAddModal.saveButtonClick();

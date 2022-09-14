@@ -21,7 +21,6 @@ public class TrainingTest extends BaseTest{
     protected final static int COPY_DAY = 13;
     protected final static int NEW_COPY_DAY = 6;
     protected final static String COPY_TRAINING = "MyTraining";
-    protected final static String UPLOAD_TRAINING = "OneTraining";
     private CalendarPage calendarPage;
     private WorkoutQuickAddModal workoutQuickAddModal;
     private WorkoutDetailsPage workoutDetailsPage;
@@ -66,24 +65,24 @@ public class TrainingTest extends BaseTest{
         workoutQuickAddModal.fillForm(WorkoutQuickFactory.beforeUploadWorkoutQuick());
         workoutQuickAddModal.saveButtonClick();
         workoutQuickAddModal.cancelButtonClick();
-        calendarPage.openMenuTraining(UPLOAD_DAY, MONTH, YEAR, UPLOAD_TRAINING);
-        calendarPage.upButtonClick(UPLOAD_TRAINING, MONTH, UPLOAD_DAY, YEAR);
+        calendarPage.openMenuTraining(UPLOAD_DAY, MONTH, YEAR, WorkoutQuickFactory.beforeUploadWorkoutQuick().getWorkoutName());
+        calendarPage.upButtonClick(WorkoutQuickFactory.beforeUploadWorkoutQuick().getWorkoutName(), MONTH, UPLOAD_DAY, YEAR);
         uploadDataModal.inputUploadFile("training.tcx");
         Assert.assertEquals(workoutDetailsPage.getWorkoutQuickInfo(), WorkoutQuickFactory.uploadWorkoutQuick());
     }
 
-    @AfterMethod(onlyForGroups = {"copyTraining"})
+    @AfterMethod(onlyForGroups = {"copyTraining"}, alwaysRun = true)
     public void clearDataCopyTraining() {
         calendarPage.backToCalendar();
         calendarPage.openMenuTraining(NEW_COPY_DAY, MONTH, YEAR, COPY_TRAINING);
         calendarPage.deleteButtonClick(COPY_TRAINING, MONTH, NEW_COPY_DAY, YEAR);
     }
 
-    @AfterMethod(onlyForGroups = {"uploadTraining"})
+    @AfterMethod(onlyForGroups = {"uploadTraining"}, alwaysRun = true)
     public void clearDataUploadTraining() {
         calendarPage.backToCalendar();
-        calendarPage.openMenuTraining(UPLOAD_DAY, MONTH, YEAR, UPLOAD_TRAINING);
-        calendarPage.deleteButtonClick(UPLOAD_TRAINING, MONTH, UPLOAD_DAY, YEAR);
+        calendarPage.openMenuTraining(UPLOAD_DAY, MONTH, YEAR, WorkoutQuickFactory.beforeUploadWorkoutQuick().getWorkoutName());
+        calendarPage.deleteButtonClick(WorkoutQuickFactory.beforeUploadWorkoutQuick().getWorkoutName(), MONTH, UPLOAD_DAY, YEAR);
     }
 
 

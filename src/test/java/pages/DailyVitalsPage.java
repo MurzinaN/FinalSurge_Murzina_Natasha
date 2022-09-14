@@ -9,6 +9,7 @@ import models.DailyVitals;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -20,6 +21,8 @@ public class DailyVitalsPage extends BasePage{
     private final static String NOTES_LOCATOR = "//a[text()='%s/%s/%s']/parent::td/following-sibling::td/span";
     private final static By DELETE_LOCATOR = By.xpath("//a[@title='Delete']");
     private final static By OK_BUTTON_LOCATOR = By.xpath("//a[@data-handler='1']");
+    private final static By PAST_DAYS_LOCATOR = By.id("PastDays");
+
     public DailyVitalsPage(WebDriver driver) {
         super(driver);
     }
@@ -28,6 +31,12 @@ public class DailyVitalsPage extends BasePage{
     public void waitForPageLoaded() {
     }
 
+    public void selectPastDays(String name){
+        WebElement dropdownElement = driver.findElement(PAST_DAYS_LOCATOR);
+        Select select = new Select(dropdownElement);
+        select.selectByVisibleText(name);
+
+    }
     public void clickDate(int month, int day, int year){
         driver.findElement(By.xpath(String.format(DATE_LOCATOR, month, day, year))).click();
     }
@@ -116,7 +125,7 @@ public class DailyVitalsPage extends BasePage{
                 dailyVitalsBuilder.diastolic(diastolic);
             }
         }
-        if (isElementPresentByLocator(By.xpath(String.format(NOTES_LOCATOR, month, day, year))) == true) {
+        if (isElementPresentByLocator(By.xpath(String.format(NOTES_LOCATOR, month, day, year)))) {
             String healthNotes = driver.findElement(By.xpath(String.format(NOTES_LOCATOR, month, day, year))).getText();
             if (healthNotes != "") {
                 dailyVitalsBuilder.healthNotes(healthNotes);

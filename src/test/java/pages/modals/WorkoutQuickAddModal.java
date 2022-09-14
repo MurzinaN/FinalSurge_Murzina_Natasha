@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-
+import utils.AllureUtils;
 
 
 @Log4j2
@@ -67,6 +67,7 @@ public class WorkoutQuickAddModal extends BaseModal {
         }
 
         new Textarea(driver, "Post Workout Notes/Results").setValue(inputWorkoutQuick.getPostWorkoutNotes_Results());
+        AllureUtils.attachScreenshot(driver);
     }
 
     public void cancelButtonClick() {

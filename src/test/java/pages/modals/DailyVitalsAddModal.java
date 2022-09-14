@@ -5,6 +5,7 @@ import lombok.extern.log4j.Log4j2;
 import models.DailyVitals;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utils.AllureUtils;
 
 
 @Log4j2
@@ -51,6 +52,7 @@ public class DailyVitalsAddModal extends BaseModal {
         new InputId(driver, "Systolic").setValue(inputDailyVitals.getSystolic());
         new InputId(driver, "Diastolic").setValue(inputDailyVitals.getDiastolic());
         new InputId(driver, "HealthNotes").setValue(inputDailyVitals.getHealthNotes());
+        AllureUtils.attachScreenshot(driver);
     }
 
     public void cancelButtonClick() {

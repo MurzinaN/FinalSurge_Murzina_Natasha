@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import utils.AllureUtils;
 
 @Log4j2
 public class PaceCalculatorModal extends OthersCalculatorsModal{
@@ -35,6 +36,7 @@ public class PaceCalculatorModal extends OthersCalculatorsModal{
         new InputId(driver, "TimeHH").setValue(inputPaceCalculator.getHours());
         new InputId(driver, "TimeMM").setValue(inputPaceCalculator.getMinutes());
         new InputId(driver, "TimeSS").setValue(inputPaceCalculator.getSeconds());
+        AllureUtils.attachScreenshot(driver);
     }
 
 

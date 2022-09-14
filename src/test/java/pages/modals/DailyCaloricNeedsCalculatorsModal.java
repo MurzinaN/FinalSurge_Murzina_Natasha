@@ -7,6 +7,8 @@ import models.DailyCaloricNeedsCalculator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import utils.AllureUtils;
+
 @Log4j2
 public class DailyCaloricNeedsCalculatorsModal extends OthersCalculatorsModal{
     private final static By TODAYS_CALORIC_NEEDS_TABLE_LOCATOR = By.xpath("//*[text()='Non-Activity Calories']/ancestor::table");
@@ -31,6 +33,7 @@ public class DailyCaloricNeedsCalculatorsModal extends OthersCalculatorsModal{
         new RadioButtonCalculator(driver, "Gender").setValue(inputDailyCaloricNeedsCalculator.getGenderTypeCalculator().getName());
         new InputCalculator(driver, "RunDist").setValue(inputDailyCaloricNeedsCalculator.getDistance());
         new RadioButtonCalculator(driver, "DistType").setValue(inputDailyCaloricNeedsCalculator.getDistanceTypeCalculator().getName());
+        AllureUtils.attachScreenshot(driver);
     }
     public void clickCalculateCaloricNeedsButton() {
         driver.findElement(CALCULATE_CALORIC_NEEDS_BUTTON).click();
