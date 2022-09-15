@@ -1,6 +1,7 @@
 package pages;
 
 import enums.*;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import models.WorkoutQuick;
 import org.openqa.selenium.By;
@@ -29,7 +30,7 @@ public class WorkoutDetailsPage extends BasePage {
     public void waitForPageLoaded() {
 
     }
-
+    @Step("Filling form WorkoutQuick with recived data")
     public WorkoutQuick getWorkoutQuickInfo() {
         log.info("Filling form WorkoutQuick with recived data");
         WorkoutQuick.WorkoutQuickBuilder workoutQuickBuilder = WorkoutQuick.builder();

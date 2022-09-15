@@ -55,20 +55,20 @@ public class TrainingTest extends BaseTest{
         workoutQuickAddModal.cancelButtonClick();
         calendarPage.openMenuTraining(NEW_COPY_DAY, MONTH, YEAR, COPY_TRAINING);
         calendarPage.viewButtonClick(COPY_TRAINING, MONTH, NEW_COPY_DAY, YEAR);
-        Assert.assertEquals(workoutDetailsPage.getWorkoutQuickInfo(), expectedWorkoutQuick);
+        Assert.assertEquals(workoutDetailsPage.getWorkoutQuickInfo(), expectedWorkoutQuick, "Datas from new workout  should be equal datas from copied workout");
     }
 
     @Test(groups = {"regression", "uploadTraining"})
-    @Description("Quick add training on calendar")
+    @Description("Upload data for workout on Training Calendar")
     public void uploadTrainingTest() {
         calendarPage.addQuickTraining(UPLOAD_DAY, MONTH, YEAR);
         workoutQuickAddModal.fillForm(WorkoutQuickFactory.beforeUploadWorkoutQuick());
         workoutQuickAddModal.saveButtonClick();
         workoutQuickAddModal.cancelButtonClick();
         calendarPage.openMenuTraining(UPLOAD_DAY, MONTH, YEAR, WorkoutQuickFactory.beforeUploadWorkoutQuick().getWorkoutName());
-        calendarPage.upButtonClick(WorkoutQuickFactory.beforeUploadWorkoutQuick().getWorkoutName(), MONTH, UPLOAD_DAY, YEAR);
+        calendarPage.uploadButtonClick(WorkoutQuickFactory.beforeUploadWorkoutQuick().getWorkoutName(), MONTH, UPLOAD_DAY, YEAR);
         uploadDataModal.inputUploadFile("training.tcx");
-        Assert.assertEquals(workoutDetailsPage.getWorkoutQuickInfo(), WorkoutQuickFactory.uploadWorkoutQuick());
+        Assert.assertEquals(workoutDetailsPage.getWorkoutQuickInfo(), WorkoutQuickFactory.uploadWorkoutQuick(), "In workout form should be datas from upload file");
     }
 
     @AfterMethod(onlyForGroups = {"copyTraining"}, alwaysRun = true)

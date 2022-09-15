@@ -4,6 +4,7 @@ import enums.SleepAmount;
 import enums.SleepQuality;
 import enums.StressAmount;
 import enums.WeightType;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import models.DailyVitals;
 import org.openqa.selenium.By;
@@ -30,17 +31,20 @@ public class DailyVitalsPage extends BasePage{
     @Override
     public void waitForPageLoaded() {
     }
-
+    @Step("Select data display interval: {name}")
     public void selectPastDays(String name){
+        log.info("Select data display interval");
         WebElement dropdownElement = driver.findElement(PAST_DAYS_LOCATOR);
         Select select = new Select(dropdownElement);
         select.selectByVisibleText(name);
 
     }
+    @Step("Choise date for input daily vitals")
     public void clickDate(int month, int day, int year){
+        log.info("Choise date for input daily vitals");
         driver.findElement(By.xpath(String.format(DATE_LOCATOR, month, day, year))).click();
     }
-
+    @Step("Filling form DailyVitals with recived data")
     public DailyVitals getDailyVitalsInfo(int month, int day, int year) {
         log.info("Filling form DailyVitals with recived data");
         DailyVitals.DailyVitalsBuilder dailyVitalsBuilder = DailyVitals.builder();
@@ -133,8 +137,9 @@ public class DailyVitalsPage extends BasePage{
         }
         return dailyVitalsBuilder.build();
     }
-
+    @Step("Click 'Delete'")
     public void clickDelete(){
+        log.info("Click 'Delete'");
         driver.findElement(DELETE_LOCATOR).click();
         WebElement ok = driver.findElement(OK_BUTTON_LOCATOR);
         jsClick(ok);

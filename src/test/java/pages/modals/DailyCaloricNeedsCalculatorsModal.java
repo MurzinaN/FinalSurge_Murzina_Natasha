@@ -2,6 +2,7 @@ package pages.modals;
 
 import elements.InputCalculator;
 import elements.RadioButtonCalculator;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import models.DailyCaloricNeedsCalculator;
 import org.openqa.selenium.By;
@@ -21,8 +22,7 @@ public class DailyCaloricNeedsCalculatorsModal extends OthersCalculatorsModal{
     public void waitForPageLoaded() {
     }
 
-
-
+    @Step("Filling form DailyCaloricNeedsCalculator")
     public  void fillForm(DailyCaloricNeedsCalculator inputDailyCaloricNeedsCalculator) {
         log.info("Filling form DailyCaloricNeedsCalculator");
         new InputCalculator(driver, "Weight").setValue(inputDailyCaloricNeedsCalculator.getWeight());
@@ -33,16 +33,22 @@ public class DailyCaloricNeedsCalculatorsModal extends OthersCalculatorsModal{
         new RadioButtonCalculator(driver, "Gender").setValue(inputDailyCaloricNeedsCalculator.getGenderTypeCalculator().getName());
         new InputCalculator(driver, "RunDist").setValue(inputDailyCaloricNeedsCalculator.getDistance());
         new RadioButtonCalculator(driver, "DistType").setValue(inputDailyCaloricNeedsCalculator.getDistanceTypeCalculator().getName());
-        AllureUtils.attachScreenshot(driver);
+
     }
+    @Step("Click 'Calculate Caloric Needs'")
     public void clickCalculateCaloricNeedsButton() {
+        log.info("Click 'Calculate Caloric Needs'");
+        AllureUtils.attachScreenshot(driver);
         driver.findElement(CALCULATE_CALORIC_NEEDS_BUTTON).click();
     }
+    @Step("Ñhecking the presence of table 'Today's Caloric Needs'")
     public boolean isTodaysCaloricNeedsTableDisplayed() {
+        log.info("Ñhecking the presence of table 'Today's Caloric Needs'");
         return driver.findElement(TODAYS_CALORIC_NEEDS_TABLE_LOCATOR).isDisplayed();
     }
-
+    @Step("Ñhecking the presence of data in table 'Today's Caloric Needs'")
     public boolean isTodaysCaloricNeedsTableRowsDisplayed() {
+        log.info("Ñhecking the presence of data in table 'Today's Caloric Needs'");
         return !driver.findElements(TODAYS_CALORIC_NEEDS_TABLE_ROWS_LOCATOR).isEmpty();
     }
 }

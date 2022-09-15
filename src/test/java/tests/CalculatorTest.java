@@ -43,24 +43,24 @@ public class CalculatorTest extends BaseTest {
 
 
     @Test(groups = {"regression"})
-    @Description("Calculation daily caloric needs.")
+    @Description("Calculation daily caloric needs")
     public void dailyCaloricNeedsCalculatorTest() {
         othersCalculatorsModal.clickCaloricNeedsButton();
         dailyCaloricNeedsCalculatorModal.fillForm(DailyCaloricNeedsCalculatorFactory.getDailyCaloricNeedsCalculator());
         dailyCaloricNeedsCalculatorModal.clickCalculateCaloricNeedsButton();
-        Assert.assertTrue(dailyCaloricNeedsCalculatorModal.isTodaysCaloricNeedsTableDisplayed());
-        Assert.assertTrue(dailyCaloricNeedsCalculatorModal.isTodaysCaloricNeedsTableRowsDisplayed());
+        Assert.assertTrue(dailyCaloricNeedsCalculatorModal.isTodaysCaloricNeedsTableDisplayed(), "Table 'Caloric Needs' with results should be on display");
+        Assert.assertTrue(dailyCaloricNeedsCalculatorModal.isTodaysCaloricNeedsTableRowsDisplayed(), "In table 'Caloric Needs' with results should be datas");
     }
 
     @Test(groups = {"regression"})
-    @Description("Calculate pace.")
+    @Description("Calculate pace")
     public void paceCalculatorTest() {
         othersCalculatorsModal.clickPaceCalculatorButton();
         paceCalculatorModal.fillForm(PaceCalculatorFactory.getPaceCalculator());
         paceCalculatorModal.clickCalculatePacesButton();
-        Assert.assertTrue(paceCalculatorModal.isPaceChartTableDisplayed());
-        Assert.assertTrue(paceCalculatorModal.isPaceSplitsTableDisplayed());
-        Assert.assertTrue(paceCalculatorModal.isPaceChartTableRowsDisplayed());
-        Assert.assertTrue(paceCalculatorModal.isPaceSplitsTableRowsDisplayed());
+        Assert.assertTrue(paceCalculatorModal.isPaceChartTableDisplayed(), "Table 'Pace Chart' with results should be on display");
+        Assert.assertTrue(paceCalculatorModal.isPaceSplitsTableDisplayed(), "Table 'Pace Splits' with results should be on display");
+        Assert.assertTrue(paceCalculatorModal.isPaceChartTableRowsDisplayed(), "In table 'Pace Chart' with results should be datas");
+        Assert.assertTrue(paceCalculatorModal.isPaceSplitsTableRowsDisplayed(), "In table 'Pace Splits' with results should be datas");
     }
 }

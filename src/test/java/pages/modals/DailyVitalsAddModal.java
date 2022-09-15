@@ -1,6 +1,7 @@
 package pages.modals;
 
 import elements.InputId;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import models.DailyVitals;
 import org.openqa.selenium.By;
@@ -21,7 +22,7 @@ public class DailyVitalsAddModal extends BaseModal {
     public void waitForPageLoaded() {
 
     }
-
+    @Step("Filling form DailyVitals")
     public void fillForm(DailyVitals inputDailyVitals) {
         log.info("Filling form DailyVitals");
         new InputId(driver, "Steps").setValue(inputDailyVitals.getSteps());
@@ -52,14 +53,18 @@ public class DailyVitalsAddModal extends BaseModal {
         new InputId(driver, "Systolic").setValue(inputDailyVitals.getSystolic());
         new InputId(driver, "Diastolic").setValue(inputDailyVitals.getDiastolic());
         new InputId(driver, "HealthNotes").setValue(inputDailyVitals.getHealthNotes());
-        AllureUtils.attachScreenshot(driver);
-    }
 
+    }
+    @Step("Click 'Cancel'")
     public void cancelButtonClick() {
+        log.info("Click 'Cancel'");
+        AllureUtils.attachScreenshot(driver);
         driver.findElement(CANCEL_BUTTON).click();
     }
-
+    @Step("Getting the text of the error message")
     public String getErrorMessageText() {
+        log.info("Getting the text of the error message");
+        AllureUtils.attachScreenshot(driver);
         String text = driver.findElement(ERROR_MESSAGE_LOCATOR).getText();
         return text;
     }

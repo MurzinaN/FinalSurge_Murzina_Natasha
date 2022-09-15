@@ -1,6 +1,7 @@
 package pages.modals;
 
 import elements.InputId;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import models.NewShoe;
 import org.openqa.selenium.By;
@@ -29,9 +30,9 @@ public class AddNewShoeModal extends BaseModal {
     public void waitForPageLoaded() {
 
     }
-
+    @Step("Filling form AddNewShoe")
     public void fillForm(NewShoe inputNewShoe) {
-        log.info("Filling form add new shoe");
+        log.info("Filling form AddNewShoe");
         new InputId(driver, "ShoeName").setValue(inputNewShoe.getShoeName());
         if (inputNewShoe.getBrand() != null) {
             driver.findElement(BRAND_INPUT_LOCATOR).click();
@@ -63,10 +64,12 @@ public class AddNewShoeModal extends BaseModal {
             select.selectByVisibleText(inputNewShoe.getDistanceAlertType().getName());
         }
         new InputId(driver, "ShoeNotes").setValue(inputNewShoe.getNotes());
-        AllureUtils.attachScreenshot(driver);
-    }
 
-    public void clickAddShoeButtonButton() {
+    }
+    @Step("Click 'Add Shoe'")
+    public void clickAddShoeButton() {
+        log.info("Click 'Add Shoe'");
+        AllureUtils.attachScreenshot(driver);
         driver.findElement(ADD_SHOE_BUTTON_LOCATOR).click();
     }
 }

@@ -3,6 +3,7 @@ package pages;
 import enums.Brand;
 import enums.DistanceTypeShoes;
 import enums.ShoeSize;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import models.NewShoe;
 import org.openqa.selenium.By;
@@ -30,7 +31,7 @@ public class ShoesPage extends BasePage{
     public void waitForPageLoaded() {
 
     }
-
+    @Step("Filling form NewShoe with recived data")
     public NewShoe getNewShoeInfo(String shoeName) {
         log.info("Filling form NewShoe with recived data");
         NewShoe.NewShoeBuilder newShoeBuilder = NewShoe.builder();
@@ -72,7 +73,9 @@ public class ShoesPage extends BasePage{
         }
         return newShoeBuilder.build();
     }
+    @Step("Click 'Delete'")
     public void clickDelete(String shoeName){
+        log.info("Click 'Delete'");
         driver.findElement(By.xpath(String.format(SHOE_NAME_LOCATOR, shoeName))).click();
         driver.findElement(DELETE_LOCATOR).click();
         WebElement ok = driver.findElement(OK_BUTTON_LOCATOR);

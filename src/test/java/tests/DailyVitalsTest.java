@@ -51,7 +51,7 @@ public class DailyVitalsTest extends BaseTest {
         dailyVitalsAddModal.fillForm(newDailyVitals);
         dailyVitalsAddModal.saveButtonClick();
         dailyVitalsAddModal.cancelButtonClick();
-        Assert.assertEquals(dailyVitalsPage.getDailyVitalsInfo(month, day, year), newDailyVitals);
+        Assert.assertEquals(dailyVitalsPage.getDailyVitalsInfo(month, day, year), newDailyVitals, "Input data should be equals data from workout details form");
 
     }
 
@@ -69,7 +69,7 @@ public class DailyVitalsTest extends BaseTest {
         dailyVitalsPage.clickDate(MONTH, 20, YEAR);
         dailyVitalsAddModal.fillForm(newDailyVitals);
         dailyVitalsAddModal.saveButtonClick();
-        Assert.assertTrue(dailyVitalsAddModal.getErrorMessageText().contains(errorMessage));
+        Assert.assertTrue(dailyVitalsAddModal.getErrorMessageText().contains(errorMessage), "Error message should contains: "+errorMessage);
 
     }
 

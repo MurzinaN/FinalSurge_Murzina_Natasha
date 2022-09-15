@@ -7,7 +7,6 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.CalendarPage;
 import pages.WorkoutDetailsPage;
-import pages.modals.UploadDataModal;
 import pages.modals.WorkoutQuickAddModal;
 import utils.WorkoutQuickFactory;
 
@@ -36,7 +35,7 @@ public class AddTrainingTest extends BaseTest {
     }
 
     @Test(groups = {"smoke"}, dataProvider = "AddTrainingOnCalendarTestData")
-    @Description("Quick add training on calendar")
+    @Description("Quick add training on Calendar")
     public void addTrainingOnCalendarTest(int day, int month, int year, WorkoutQuick newWorkoutQuick) throws InterruptedException {
         calendarPage.addQuickTraining(day, month, year);
         workoutQuickAddModal.fillForm(newWorkoutQuick);

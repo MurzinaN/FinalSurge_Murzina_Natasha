@@ -3,6 +3,7 @@ package pages.modals;
 import elements.Input;
 import elements.InputDiv;
 import elements.Textarea;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import models.WorkoutQuick;
 import org.openqa.selenium.By;
@@ -30,7 +31,7 @@ public class WorkoutQuickAddModal extends BaseModal {
     public void waitForPageLoaded() {
 
     }
-
+    @Step("Filling form WorkoutQuick")
     public void fillForm(WorkoutQuick inputWorkoutQuick) {
         log.info("Filling form WorkoutQuick");
         if (inputWorkoutQuick.getTimeOfDay() != null) {
@@ -67,14 +68,15 @@ public class WorkoutQuickAddModal extends BaseModal {
         }
 
         new Textarea(driver, "Post Workout Notes/Results").setValue(inputWorkoutQuick.getPostWorkoutNotes_Results());
-        AllureUtils.attachScreenshot(driver);
     }
-
+    @Step("Click 'Cancel'")
     public void cancelButtonClick() {
+        log.info("Click 'Cancel'");
         driver.findElement(CANCEL_BUTTON).click();
     }
-
+    @Step("Input new date training")
     public void inputNewDate(int month, int day, int year) {
+        log.info("Input new date training");
         driver.findElement(WORKOUT_DATE_LOCATOR).sendKeys(month + "/" + day + "/" + year);
     }
 }
