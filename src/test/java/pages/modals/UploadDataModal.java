@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utils.AllureUtils;
+
 @Log4j2
 public class UploadDataModal extends BaseModal {
     private final static By IFRAME_LOCATOR = By.id("WorkoutUploadiFrame");

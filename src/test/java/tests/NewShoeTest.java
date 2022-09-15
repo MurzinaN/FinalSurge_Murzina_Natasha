@@ -13,7 +13,6 @@ import pages.modals.AddNewShoeModal;
 import utils.NewShoeFactory;
 
 
-
 public class NewShoeTest extends BaseTest{
     public final static String ITEM_NAVIGATION_MENU = "Gear & Routes";
     private HomePage homePage;

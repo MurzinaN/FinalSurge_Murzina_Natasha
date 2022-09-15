@@ -1,6 +1,6 @@
 package pages;
 
-import enums.Brand;
+
 import enums.DistanceTypeShoes;
 import enums.ShoeSize;
 import io.qameta.allure.Step;
@@ -9,9 +9,6 @@ import models.NewShoe;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.yaml.snakeyaml.scanner.Scanner;
-
-import java.util.List;
 
 
 @Log4j2
@@ -31,9 +28,9 @@ public class ShoesPage extends BasePage{
     public void waitForPageLoaded() {
 
     }
-    @Step("Filling form NewShoe with recived data")
+    @Step("Filling form NewShoe with received data")
     public NewShoe getNewShoeInfo(String shoeName) {
-        log.info("Filling form NewShoe with recived data");
+        log.info("Filling form NewShoe with received data");
         NewShoe.NewShoeBuilder newShoeBuilder = NewShoe.builder();
         String text = driver.findElement(By.xpath(String.format(NAME_LOCATOR, shoeName))).getText();
         String[] textSplit = text.split("\n");

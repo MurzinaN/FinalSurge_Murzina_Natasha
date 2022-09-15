@@ -1,6 +1,5 @@
 package enums;
 
-
 public enum StressAmount {
     SELECT("Select..."),
     LOW("Low"),

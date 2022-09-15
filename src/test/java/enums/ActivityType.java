@@ -1,6 +1,5 @@
 package enums;
 
-
 public enum ActivityType {
     SELECT("Select..."),
     RUN("Run"),

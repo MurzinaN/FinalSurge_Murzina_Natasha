@@ -5,7 +5,6 @@ import enums.DistanceTypeShoes;
 import enums.ShoeSize;
 import models.NewShoe;
 
-
 public class NewShoeFactory {
     public static NewShoe getNewShoe() {
         return NewShoe.builder()

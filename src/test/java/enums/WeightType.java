@@ -1,6 +1,5 @@
 package enums;
 
-
 public enum WeightType {
     LBS("lbs"),
     KG("kg");

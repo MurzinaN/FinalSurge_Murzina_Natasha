@@ -30,9 +30,9 @@ public class WorkoutDetailsPage extends BasePage {
     public void waitForPageLoaded() {
 
     }
-    @Step("Filling form WorkoutQuick with recived data")
+    @Step("Filling form WorkoutQuick with received data")
     public WorkoutQuick getWorkoutQuickInfo() {
-        log.info("Filling form WorkoutQuick with recived data");
+        log.info("Filling form WorkoutQuick with received data");
         WorkoutQuick.WorkoutQuickBuilder workoutQuickBuilder = WorkoutQuick.builder();
         if (isElementPresentByLocator(WORKOUT_NAME_LOCATOR)) {
             String workoutName = driver.findElement(WORKOUT_NAME_LOCATOR).getText();

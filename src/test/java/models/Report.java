@@ -11,3 +11,4 @@ public class Report {
     private String dateEnd;
     private ActivityType activityType;
 }
+
