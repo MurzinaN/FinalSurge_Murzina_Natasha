@@ -86,9 +86,12 @@ public class WorkoutDetailsPage extends BasePage {
             workoutQuickBuilder.perceivedEffort(PerceivedEffort.fromString(perceivedEffort));
         }
         if (isElementPresentByLocator(POST_WORKOUT_LOCATOR)) {
-            driver.findElement(POST_WORKOUT_LOCATOR).click();
+            if (!driver.findElement(POST_WORKOUT_NOTES_LOCATOR).isDisplayed()){
+                driver.findElement(POST_WORKOUT_LOCATOR).click();
+            }
             String postWorkoutNotesResults = driver.findElement(POST_WORKOUT_NOTES_LOCATOR).getText();
             workoutQuickBuilder.postWorkoutNotes_Results(postWorkoutNotesResults);
+
         }
         return workoutQuickBuilder.build();
     }
