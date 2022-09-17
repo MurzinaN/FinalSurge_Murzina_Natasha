@@ -26,3 +26,4 @@ public class EquipmentPage extends BasePage {
     }
 
 }
+

@@ -11,13 +11,14 @@ import org.openqa.selenium.support.ui.Select;
 import utils.AllureUtils;
 
 @Log4j2
-public class PaceCalculatorModal extends OthersCalculatorsModal{
+public class PaceCalculatorModal extends OthersCalculatorsModal {
     private static final By DISTANCE_TYPE_LOCATOR = By.id("DistType");
     private static final By CALCULATE_PACES_BUTTON_LOCATOR = By.id("saveButtonSettings");
     private final static By PACE_CHART_TABLE_LOCATOR = By.xpath("//h4[text()='Pace Chart']");
     private final static By PACE_SPLITS_TABLE_LOCATOR = By.xpath("//h4[text()='Pace Splits']");
     private final static By PACE_CHART_TABLE_ROWS_LOCATOR = By.xpath("//h4[text()='Pace Chart']/parent::div/following-sibling::div/descendant::tbody/tr");
     private final static By PACE_SPLITS_TABLE_ROWS_LOCATOR = By.xpath("//h4[text()='Pace Splits']/parent::div/following-sibling::div/descendant::tbody/tr");
+
     public PaceCalculatorModal(WebDriver driver) {
         super(driver);
     }
@@ -25,8 +26,9 @@ public class PaceCalculatorModal extends OthersCalculatorsModal{
     @Override
     public void waitForPageLoaded() {
     }
+
     @Step("Filling form PaceCalculator")
-    public  void fillForm(PaceCalculator inputPaceCalculator) {
+    public void fillForm(PaceCalculator inputPaceCalculator) {
         log.info("Filling form PaceCalculator");
         new InputId(driver, "RunDist").setValue(inputPaceCalculator.getDistance());
         if (inputPaceCalculator.getDistanceTypePaceCalculator() != null) {
@@ -46,21 +48,25 @@ public class PaceCalculatorModal extends OthersCalculatorsModal{
         AllureUtils.attachScreenshot(driver);
         driver.findElement(CALCULATE_PACES_BUTTON_LOCATOR).click();
     }
+
     @Step("Checking the presence of table 'Pace Chart'")
     public boolean isPaceChartTableDisplayed() {
         log.info("Checking the presence of table 'Pace Chart'");
         return driver.findElement(PACE_CHART_TABLE_LOCATOR).isDisplayed();
     }
+
     @Step("Checking the presence of table 'Pace Splits'")
     public boolean isPaceSplitsTableDisplayed() {
         log.info("Checking the presence of table 'Pace Splits'");
         return driver.findElement(PACE_SPLITS_TABLE_LOCATOR).isDisplayed();
     }
+
     @Step("Checking the presence of data in table 'Pace Chart'")
     public boolean isPaceChartTableRowsDisplayed() {
         log.info("Checking the presence of data in table 'Pace Chart'");
         return !driver.findElements(PACE_CHART_TABLE_ROWS_LOCATOR).isEmpty();
     }
+
     @Step("Checking the presence of data in table 'Pace Splits'")
     public boolean isPaceSplitsTableRowsDisplayed() {
         log.info("Checking the presence of data in table 'Pace Splits'");

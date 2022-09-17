@@ -28,9 +28,13 @@ public abstract class BasePage {
         return isPresent;
     }
 
-
     public void waitForElementDisplayed(By locator) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+
+    public void waitForElementClickable(By locator) {
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
     public void jsClick(WebElement element) {
@@ -38,3 +42,4 @@ public abstract class BasePage {
         executor.executeScript("arguments[0].click();", element);
     }
 }
+

@@ -30,6 +30,7 @@ public class WorkoutQuickAddModal extends BaseModal {
     public void waitForPageLoaded() {
 
     }
+
     @Step("Filling form WorkoutQuick")
     public void fillForm(WorkoutQuick inputWorkoutQuick) {
         log.info("Filling form WorkoutQuick");
@@ -68,11 +69,13 @@ public class WorkoutQuickAddModal extends BaseModal {
 
         new Textarea(driver, "Post Workout Notes/Results").setValue(inputWorkoutQuick.getPostWorkoutNotes_Results());
     }
+
     @Step("Click 'Cancel'")
     public void cancelButtonClick() {
         log.info("Click 'Cancel'");
         driver.findElement(CANCEL_BUTTON).click();
     }
+
     @Step("Input new date training")
     public void inputNewDate(int month, int day, int year) {
         log.info("Input new date training");

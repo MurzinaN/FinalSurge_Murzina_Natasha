@@ -27,7 +27,6 @@ public class CalculatorTest extends BaseTest {
         othersCalculatorsModal = new OthersCalculatorsModal(driver);
         paceCalculatorModal = new PaceCalculatorModal(driver);
     }
-
     @BeforeMethod(alwaysRun = true)
     public void start() {
         loginPage.login(EMAIL, PASSWORD);
@@ -39,7 +38,6 @@ public class CalculatorTest extends BaseTest {
     public void finish() {
         othersCalculatorsModal.switchToDefaultContent();
     }
-
 
 
     @Test(groups = {"regression"})
@@ -64,3 +62,4 @@ public class CalculatorTest extends BaseTest {
         Assert.assertTrue(paceCalculatorModal.isPaceSplitsTableRowsDisplayed(), "In table 'Pace Splits' with results should be data");
     }
 }
+

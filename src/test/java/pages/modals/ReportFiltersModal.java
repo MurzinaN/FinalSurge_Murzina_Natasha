@@ -7,12 +7,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+
 @Log4j2
-public class ReportFiltersModal extends BaseModal{
+public class ReportFiltersModal extends BaseModal {
     private final static By DATE_LOCATOR = By.id("WorkoutDate");
     private final static By DATE_END_LOCATOR = By.id("WorkoutDateEnd");
     private final static By ACTIVITY_TYPE_LOCATOR = By.id("ActivityType");
     private final static By VIEW_REPORT_BUTTON_LOCATOR = By.xpath("//input[@value='View Report']");
+
     public ReportFiltersModal(WebDriver driver) {
         super(driver);
     }

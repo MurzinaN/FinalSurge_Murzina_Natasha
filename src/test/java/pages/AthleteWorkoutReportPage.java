@@ -10,9 +10,10 @@ import java.util.List;
 
 
 @Log4j2
-public class AthleteWorkoutReportPage extends BasePage{
+public class AthleteWorkoutReportPage extends BasePage {
     private final static By ITEMS_TABLE_LOCATOR = By.xpath("//th[text()='Activity']/ancestor::table/tbody/tr");
     private final static By ACTIVITIES_TYPES_NAMES_LOCATOR = By.xpath("//th[text()='Activity']/ancestor::table/tbody/tr/td[2]/a");
+
     public AthleteWorkoutReportPage(WebDriver driver) {
         super(driver);
     }
@@ -21,6 +22,7 @@ public class AthleteWorkoutReportPage extends BasePage{
     public void waitForPageLoaded() {
 
     }
+
     @Step("Count the number of workouts")
     public int countNumberWorkouts() {
         log.info("Count the number of workouts");
@@ -36,3 +38,5 @@ public class AthleteWorkoutReportPage extends BasePage{
     }
 
 }
+
+

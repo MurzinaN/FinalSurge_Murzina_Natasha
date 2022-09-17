@@ -15,6 +15,7 @@ public abstract class BaseModal extends BasePage {
     public BaseModal(WebDriver driver) {
         super(driver);
     }
+
     @Step("Click 'Save'")
     public void saveButtonClick() {
         log.info("Click 'Save'");
@@ -22,3 +23,4 @@ public abstract class BaseModal extends BasePage {
         driver.findElement(SAVE_BUTTON).click();
     }
 }
+

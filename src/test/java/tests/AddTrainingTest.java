@@ -45,7 +45,7 @@ public class AddTrainingTest extends BaseTest {
         trainingName = workoutDetailsPage.getWorkoutQuickInfo().getWorkoutName();
         trainingDay = day;
         trainingMonth = month;
-        trainingYear =year;
+        trainingYear = year;
         Assert.assertEquals(workoutDetailsPage.getWorkoutQuickInfo(), newWorkoutQuick, "Input data should be equals data from workout details form");
 
     }
@@ -59,14 +59,14 @@ public class AddTrainingTest extends BaseTest {
         };
     }
 
-
     @AfterMethod(alwaysRun = true)
     public void clearDataAddTraining() {
         calendarPage.backToCalendar();
-            calendarPage.openMenuTraining(trainingDay, trainingMonth, trainingYear, trainingName);
-            calendarPage.deleteButtonClick(trainingName, trainingMonth, trainingDay, trainingYear);
+        calendarPage.openMenuTraining(trainingDay, trainingMonth, trainingYear, trainingName);
+        calendarPage.deleteButtonClick(trainingName, trainingMonth, trainingDay, trainingYear);
 
 
     }
 
 }
+

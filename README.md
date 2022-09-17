@@ -41,22 +41,22 @@ Test suites
 Smoke tests
 This suite includes tests: addTrainingOnCalendarTest, positiveLoginTest, reportTest 
 Running the suit
-mvn -Dtest=smokeTest.xml test
+mvn -DsuiteXmlFile=smokeTest.xml test
 
 Regression tests
 This suite includes tests: dailyCaloricNeedsCalculatorTest, paceCalculatorTest, addDailyVitalsTest, logoutTest, addNewShoeTest, copyTrainingOnCalendarTest, uploadTrainingTest
 Running the suit
-mvn -Dtest=regressionTest.xml test
+mvn -DsuiteXmlFile=regressionTest.xml test
 And each scenario of this suite will execute.
  
 Negative tests
 This suite includes tests: dailyVitalsWithIncorrectDataTest, negativeLoginTestForEmail, negativeLoginTestForPassword
 Running the suit
-mvn -Dtest=negativeTest.xml test
+mvn -DsuiteXmlFile=negativeTest.xml test
 
 Running all tests:
 1.	mvn clean test
-2.	mvn -Dtest=allTests.xml test
+2.	mvn -DsuiteXmlFile=allTests.xml test
 
 Running all tests in class:
 mvn -Dtest=AddTrainingTest test
@@ -82,6 +82,7 @@ mvn -Dtest=NewShoeTest#addNewShoeTest test
 mvn -Dtest=ReportsAndStatisticsTest#reportTest test
 mvn -Dtest=TrainingTest#copyTrainingOnCalendarTest test
 mvn -Dtest=TrainingTest#uploadTrainingTest test
+
 
 
 

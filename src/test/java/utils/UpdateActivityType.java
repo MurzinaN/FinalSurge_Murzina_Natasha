@@ -5,10 +5,11 @@ import java.util.List;
 
 public class UpdateActivityType {
     public static List<String> update(String type, int numbers) {
-        if (type.contains("-")){
+        if (type.contains("-")) {
             type = type.replace("    -", "");
-        type = type.replace(": ", " - ");
+            type = type.replace(": ", " - ");
         }
+
         List<String> expectedTypes = new ArrayList<>();
         for (int i=0; i<numbers; i++){
             expectedTypes.add(type);

@@ -29,6 +29,7 @@ public class AddNewShoeModal extends BaseModal {
     public void waitForPageLoaded() {
 
     }
+
     @Step("Filling form AddNewShoe")
     public void fillForm(NewShoe inputNewShoe) {
         log.info("Filling form AddNewShoe");
@@ -65,6 +66,7 @@ public class AddNewShoeModal extends BaseModal {
         new InputId(driver, "ShoeNotes").setValue(inputNewShoe.getNotes());
 
     }
+
     @Step("Click 'Add Shoe'")
     public void clickAddShoeButton() {
         log.info("Click 'Add Shoe'");
@@ -72,3 +74,4 @@ public class AddNewShoeModal extends BaseModal {
         driver.findElement(ADD_SHOE_BUTTON_LOCATOR).click();
     }
 }
+

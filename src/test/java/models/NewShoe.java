@@ -22,8 +22,9 @@ public class NewShoe {
     private String distanceAlert;
     private DistanceTypeShoes distanceAlertType;
     private String notes;
+    private String brandAndModel;
 
-    public String getBrandAndModel() {
+     public String getBrandAndModel() {
         return Objects.requireNonNullElseGet(brandAndModel, () -> brand.getName() + " " + model);
     }
 
@@ -39,6 +40,4 @@ public class NewShoe {
     public int hashCode() {
         return Objects.hash(shoeName, cost, datePurchased, shoeSize, startingDistance, startingDistanceType, distanceAlert, distanceAlertType, notes, brandAndModel);
     }
-
-    private String brandAndModel;
 }
