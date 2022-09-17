@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 
 import java.util.Objects;
 
-
 @Log4j2
 public class InputCalculator extends BaseElement {
 

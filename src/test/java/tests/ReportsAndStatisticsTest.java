@@ -1,6 +1,6 @@
 package tests;
 
-import enums.ActivityType;
+
 import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;

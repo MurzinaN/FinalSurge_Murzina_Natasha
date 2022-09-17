@@ -1,6 +1,5 @@
 package enums;
 
-
 public enum ShoeSize {
     SELECT_SIZE("Select size..."),
     SIZE_1("1"),

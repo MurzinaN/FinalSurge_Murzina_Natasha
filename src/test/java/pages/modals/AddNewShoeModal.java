@@ -10,7 +10,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import utils.AllureUtils;
 
-
 @Log4j2
 public class AddNewShoeModal extends BaseModal {
 

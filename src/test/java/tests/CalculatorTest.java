@@ -48,7 +48,7 @@ public class CalculatorTest extends BaseTest {
         dailyCaloricNeedsCalculatorModal.fillForm(DailyCaloricNeedsCalculatorFactory.getDailyCaloricNeedsCalculator());
         dailyCaloricNeedsCalculatorModal.clickCalculateCaloricNeedsButton();
         Assert.assertTrue(dailyCaloricNeedsCalculatorModal.isTodaysCaloricNeedsTableDisplayed(), "Table 'Caloric Needs' with results should be on display");
-        Assert.assertTrue(dailyCaloricNeedsCalculatorModal.isTodaysCaloricNeedsTableRowsDisplayed(), "In table 'Caloric Needs' with results should be datas");
+        Assert.assertTrue(dailyCaloricNeedsCalculatorModal.isTodaysCaloricNeedsTableRowsDisplayed(), "In table 'Caloric Needs' with results should be data");
     }
 
     @Test(groups = {"regression"})
@@ -59,7 +59,7 @@ public class CalculatorTest extends BaseTest {
         paceCalculatorModal.clickCalculatePacesButton();
         Assert.assertTrue(paceCalculatorModal.isPaceChartTableDisplayed(), "Table 'Pace Chart' with results should be on display");
         Assert.assertTrue(paceCalculatorModal.isPaceSplitsTableDisplayed(), "Table 'Pace Splits' with results should be on display");
-        Assert.assertTrue(paceCalculatorModal.isPaceChartTableRowsDisplayed(), "In table 'Pace Chart' with results should be datas");
-        Assert.assertTrue(paceCalculatorModal.isPaceSplitsTableRowsDisplayed(), "In table 'Pace Splits' with results should be datas");
+        Assert.assertTrue(paceCalculatorModal.isPaceChartTableRowsDisplayed(), "In table 'Pace Chart' with results should be data");
+        Assert.assertTrue(paceCalculatorModal.isPaceSplitsTableRowsDisplayed(), "In table 'Pace Splits' with results should be data");
     }
 }

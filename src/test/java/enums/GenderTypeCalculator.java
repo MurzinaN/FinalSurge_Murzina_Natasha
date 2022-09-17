@@ -1,5 +1,6 @@
 package enums;
 
+
 public enum GenderTypeCalculator {
     MALE("m"),
     FEMALE("f");

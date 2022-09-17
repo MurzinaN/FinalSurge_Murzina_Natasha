@@ -1,6 +1,5 @@
 package enums;
 
-
 public enum SleepQuality {
     SELECT("Select..."),
     GOOD("Good"),

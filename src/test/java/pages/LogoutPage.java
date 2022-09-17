@@ -18,9 +18,9 @@ public class LogoutPage extends BasePage {
 
     }
 
-    @Step("Ñhecking the presence of logout message on display")
+    @Step("Checking the presence of logout message on display")
     public boolean isLogoutMessageDisplayed() {
-        log.info("Ñhecking the presence of logout message on display");
+        log.info("Checking the presence of logout message on display");
         return driver.findElement(LOGOUT_MESSAGE).isDisplayed();
     }
 

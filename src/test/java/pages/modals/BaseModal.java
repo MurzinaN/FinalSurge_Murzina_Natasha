@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import pages.BasePage;
 import utils.AllureUtils;
 
+
 @Log4j2
 public abstract class BaseModal extends BasePage {
     private static final By SAVE_BUTTON = By.id("saveButton");

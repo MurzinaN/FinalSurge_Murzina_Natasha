@@ -46,24 +46,24 @@ public class PaceCalculatorModal extends OthersCalculatorsModal{
         AllureUtils.attachScreenshot(driver);
         driver.findElement(CALCULATE_PACES_BUTTON_LOCATOR).click();
     }
-    @Step("Ñhecking the presence of table 'Pace Chart'")
+    @Step("Checking the presence of table 'Pace Chart'")
     public boolean isPaceChartTableDisplayed() {
-        log.info("Ñhecking the presence of table 'Pace Chart'");
+        log.info("Checking the presence of table 'Pace Chart'");
         return driver.findElement(PACE_CHART_TABLE_LOCATOR).isDisplayed();
     }
-    @Step("Ñhecking the presence of table 'Pace Splits'")
+    @Step("Checking the presence of table 'Pace Splits'")
     public boolean isPaceSplitsTableDisplayed() {
-        log.info("Ñhecking the presence of table 'Pace Splits'");
+        log.info("Checking the presence of table 'Pace Splits'");
         return driver.findElement(PACE_SPLITS_TABLE_LOCATOR).isDisplayed();
     }
-    @Step("Ñhecking the presence of data in table 'Pace Chart'")
+    @Step("Checking the presence of data in table 'Pace Chart'")
     public boolean isPaceChartTableRowsDisplayed() {
-        log.info("Ñhecking the presence of data in table 'Pace Chart'");
+        log.info("Checking the presence of data in table 'Pace Chart'");
         return !driver.findElements(PACE_CHART_TABLE_ROWS_LOCATOR).isEmpty();
     }
-    @Step("Ñhecking the presence of data in table 'Pace Splits'")
+    @Step("Checking the presence of data in table 'Pace Splits'")
     public boolean isPaceSplitsTableRowsDisplayed() {
-        log.info("Ñhecking the presence of data in table 'Pace Splits'");
+        log.info("Checking the presence of data in table 'Pace Splits'");
         return !driver.findElements(PACE_SPLITS_TABLE_ROWS_LOCATOR).isEmpty();
     }
 }
