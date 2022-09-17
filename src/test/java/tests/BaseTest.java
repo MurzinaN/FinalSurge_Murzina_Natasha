@@ -28,7 +28,7 @@ public class BaseTest {
         String browserName = System.getProperty("browser", "chrome");
         driver = DriverFactory.getDriver(browserName);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         testContext.setAttribute("driver", driver);
         loginPage = new LoginPage(driver);
@@ -48,7 +48,7 @@ public class BaseTest {
         ((JavascriptExecutor) driver).executeScript(String.format("window.sessionStorage.clear();"));
     }
 
-      @AfterClass(alwaysRun = true)
+    @AfterClass(alwaysRun = true)
     public void finish() {
         this.driver.quit();
     }

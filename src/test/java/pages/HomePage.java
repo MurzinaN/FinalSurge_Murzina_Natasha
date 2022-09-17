@@ -40,8 +40,10 @@ public class HomePage extends BasePage {
     @Step("Click item navigation menu: {item}")
     public void clickItemNavigationMenu(String item) {
         log.info("Click item navigation menu");
+        waitForElementClickable(By.xpath(String.format(MENU_LOCATOR, item)));
         driver.findElement(By.xpath(String.format(MENU_LOCATOR, item))).click();
     }
+
     @Step("Click item Workouts menu: {item}")
     public void clickItemWorkoutsMenu(String item, String subItem) {
         log.info("Click item Workouts menu");

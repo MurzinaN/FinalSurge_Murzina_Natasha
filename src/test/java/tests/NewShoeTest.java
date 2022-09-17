@@ -14,7 +14,7 @@ import utils.NewShoeFactory;
 
 
 
-public class NewShoeTest extends BaseTest{
+public class NewShoeTest extends BaseTest {
     public final static String ITEM_NAVIGATION_MENU = "Gear & Routes";
     private HomePage homePage;
     private EquipmentPage equipmentPage;
@@ -28,6 +28,7 @@ public class NewShoeTest extends BaseTest{
         addNewShoeModal = new AddNewShoeModal(driver);
         shoesPage = new ShoesPage(driver);
     }
+
     @BeforeMethod(alwaysRun = true)
     public void login() {
         loginPage.login(EMAIL, PASSWORD);
@@ -35,15 +36,16 @@ public class NewShoeTest extends BaseTest{
 
     @Test(groups = {"regression"})
     @Description("Add new shoe in equipment")
-    public void addNewShoeTest(){
+    public void addNewShoeTest() {
         homePage.clickItemNavigationMenu(ITEM_NAVIGATION_MENU);
         equipmentPage.clickShoesButton();
         addNewShoeModal.fillForm(NewShoeFactory.getNewShoe());
         addNewShoeModal.clickAddShoeButton();
         Assert.assertEquals(shoesPage.getNewShoeInfo(NewShoeFactory.getNewShoe().getShoeName()), NewShoeFactory.getNewShoe(), "Input data should be equals data from workout details form");
     }
+
     @AfterMethod(alwaysRun = true)
     public void clearDataNewShoe() {
-    shoesPage.clickDelete(NewShoeFactory.getNewShoe().getShoeName());
+        shoesPage.clickDelete(NewShoeFactory.getNewShoe().getShoeName());
     }
 }

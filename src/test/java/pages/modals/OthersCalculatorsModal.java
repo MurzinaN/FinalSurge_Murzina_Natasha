@@ -19,22 +19,26 @@ public class OthersCalculatorsModal extends BaseModal {
     @Override
     public void waitForPageLoaded() {
     }
+
     @Step("Switch to Iframe")
     public void switchToIframe() {
         log.info("Switch to Iframe");
         WebElement iframe = driver.findElement(IFRAME_LOCATOR);
         driver.switchTo().frame(iframe);
     }
+
     @Step("Switch from Iframe")
     public void switchToDefaultContent() {
         log.info("Switch fromIframe");
         driver.switchTo().defaultContent();
     }
+
     @Step("Click button 'Caloric Needs'")
     public void clickCaloricNeedsButton() {
         log.info("Click button 'Caloric Needs'");
         driver.findElement(CALORIC_NEEDS_BUTTON_LOCATOR).click();
     }
+
     @Step("Click button 'Pace Calculator'")
     public void clickPaceCalculatorButton() {
         log.info("Click button 'Pace Calculator'");

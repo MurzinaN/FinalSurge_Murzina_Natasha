@@ -23,6 +23,7 @@ public class LogoutPage extends BasePage {
         log.info("Ñhecking the presence of logout message on display");
         return driver.findElement(LOGOUT_MESSAGE).isDisplayed();
     }
+
     @Step("Getting the text of the error message")
     public String getLogoutMessageText() {
         log.info("Getting the text of the error message");

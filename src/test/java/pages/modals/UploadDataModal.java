@@ -21,6 +21,7 @@ public class UploadDataModal extends BaseModal {
     @Override
     public void waitForPageLoaded() {
     }
+
     @Step("Upload file with data in training from Training Calendar")
     public void inputUploadFile(String fileName) {
         log.info("\"Upload file with data in training from Training Calendar\"");

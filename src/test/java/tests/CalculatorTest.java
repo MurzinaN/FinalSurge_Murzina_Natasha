@@ -41,7 +41,6 @@ public class CalculatorTest extends BaseTest {
     }
 
 
-
     @Test(groups = {"regression"})
     @Description("Calculation daily caloric needs")
     public void dailyCaloricNeedsCalculatorTest() {

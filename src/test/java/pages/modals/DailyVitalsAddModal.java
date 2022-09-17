@@ -22,6 +22,7 @@ public class DailyVitalsAddModal extends BaseModal {
     public void waitForPageLoaded() {
 
     }
+
     @Step("Filling form DailyVitals")
     public void fillForm(DailyVitals inputDailyVitals) {
         log.info("Filling form DailyVitals");
@@ -55,12 +56,14 @@ public class DailyVitalsAddModal extends BaseModal {
         new InputId(driver, "HealthNotes").setValue(inputDailyVitals.getHealthNotes());
 
     }
+
     @Step("Click 'Cancel'")
     public void cancelButtonClick() {
         log.info("Click 'Cancel'");
         AllureUtils.attachScreenshot(driver);
         driver.findElement(CANCEL_BUTTON).click();
     }
+
     @Step("Getting the text of the error message")
     public String getErrorMessageText() {
         log.info("Getting the text of the error message");
