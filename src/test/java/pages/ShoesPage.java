@@ -1,6 +1,6 @@
 package pages;
 
- 
+
 import enums.DistanceTypeShoes;
 import enums.ShoeSize;
 import io.qameta.allure.Step;

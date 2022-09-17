@@ -27,6 +27,7 @@ public class CalculatorTest extends BaseTest {
         othersCalculatorsModal = new OthersCalculatorsModal(driver);
         paceCalculatorModal = new PaceCalculatorModal(driver);
     }
+
     @BeforeMethod(alwaysRun = true)
     public void start() {
         loginPage.login(EMAIL, PASSWORD);
