@@ -1,5 +1,6 @@
 package enums;
 
+
 public enum HeightTypeCalculator {
     INCHES("i"),
     CENTIMETERS("m");

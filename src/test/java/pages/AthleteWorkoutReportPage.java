@@ -25,16 +25,14 @@ public class AthleteWorkoutReportPage extends BasePage{
     public int countNumberWorkouts() {
         log.info("Count the number of workouts");
         List<WebElement> workouts = driver.findElements(ITEMS_TABLE_LOCATOR);
-        int number = workouts.size();
-        return number;
+        return workouts.size();
     }
 
-    @Step("Ñheck if the ActivityType match")
+    @Step("Check if the ActivityType match")
     public List<String> checkActivityType() {
-        log.info("Ñheck if the ActivityType match");
+        log.info("Check if the ActivityType match");
         List<WebElement> activities = driver.findElements(ACTIVITIES_TYPES_NAMES_LOCATOR);
-        List<String> types = activities.stream().map(WebElement::getText).toList();
-        return types;
+        return activities.stream().map(WebElement::getText).toList();
     }
 
 }

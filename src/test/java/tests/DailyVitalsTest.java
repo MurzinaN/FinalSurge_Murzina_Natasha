@@ -41,6 +41,7 @@ public class DailyVitalsTest extends BaseTest {
         dailyVitalsPage.selectPastDays(PAST_DAYS_NAME);
     }
 
+
     @Test(groups = {"regression", "addDailyVitals"}, dataProvider = "AddDailyVitalsTestData")
     @Description("Add daily vitals in table")
     public void addDailyVitalsTest(int month, int day, int year, DailyVitals newDailyVitals) throws InterruptedException{

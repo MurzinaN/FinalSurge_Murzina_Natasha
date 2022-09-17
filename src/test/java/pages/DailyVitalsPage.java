@@ -39,14 +39,14 @@ public class DailyVitalsPage extends BasePage{
         select.selectByVisibleText(name);
 
     }
-    @Step("Choise date for input daily vitals")
+    @Step("Choice date for input daily vitals")
     public void clickDate(int month, int day, int year){
-        log.info("Choise date for input daily vitals");
+        log.info("Choice date for input daily vitals");
         driver.findElement(By.xpath(String.format(DATE_LOCATOR, month, day, year))).click();
     }
-    @Step("Filling form DailyVitals with recived data")
+    @Step("Filling form DailyVitals with received data")
     public DailyVitals getDailyVitalsInfo(int month, int day, int year) {
-        log.info("Filling form DailyVitals with recived data");
+        log.info("Filling form DailyVitals with received data");
         DailyVitals.DailyVitalsBuilder dailyVitalsBuilder = DailyVitals.builder();
         List<WebElement> allItem= driver.findElements(By.xpath(String.format(DATA_LOCATOR, month, day, year)));
         String steps = allItem.get(0).getText();

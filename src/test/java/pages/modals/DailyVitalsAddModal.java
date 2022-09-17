@@ -65,8 +65,7 @@ public class DailyVitalsAddModal extends BaseModal {
     public String getErrorMessageText() {
         log.info("Getting the text of the error message");
         AllureUtils.attachScreenshot(driver);
-        String text = driver.findElement(ERROR_MESSAGE_LOCATOR).getText();
-        return text;
+        return driver.findElement(ERROR_MESSAGE_LOCATOR).getText();
     }
 
 }

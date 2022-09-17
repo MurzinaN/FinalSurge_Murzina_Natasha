@@ -4,7 +4,6 @@ import com.github.javafaker.Faker;
 import enums.*;
 import models.WorkoutQuick;
 
-
 public class WorkoutQuickFactory {
     private static final Faker faker = new Faker();
 

@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 
 import java.util.Objects;
 
-
 @Log4j2
 public class RadioButtonCalculator extends BaseElement {
     private final static String RADIO_BUTTON_LOCATOR = "//*[text()='Daily Caloric Needs Calculator']/parent::div/following-sibling::div/descendant::input[@name='%s' and @value='%s']";
