@@ -21,3 +21,4 @@ public class DailyCaloricNeedsCalculator {
     private DistanceTypeCalculator distanceTypeCalculator;
 
 }
+

@@ -49,7 +49,7 @@ public class DailyVitalsPage extends BasePage {
 
     @Step("Filling form DailyVitals with recived data")
     public DailyVitals getDailyVitalsInfo(int month, int day, int year) {
-        log.info("Filling form DailyVitals with recived data");
+        log.info("Filling form DailyVitals with received data");
         DailyVitals.DailyVitalsBuilder dailyVitalsBuilder = DailyVitals.builder();
         List<WebElement> allItem = driver.findElements(By.xpath(String.format(DATA_LOCATOR, month, day, year)));
         String steps = allItem.get(0).getText();

@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+
 @Log4j2
 public class OthersCalculatorsModal extends BaseModal {
     protected final static By IFRAME_LOCATOR = By.id("OtherCalciFrame");

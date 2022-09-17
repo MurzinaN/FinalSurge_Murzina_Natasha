@@ -24,14 +24,9 @@ public class NewShoe {
     private String notes;
     private String brandAndModel;
 
-    public String getBrandAndModel() {
-        if (brandAndModel != null) {
-            return brandAndModel;
-        } else {
-            return brand.getName() + " " + model;
-        }
+     public String getBrandAndModel() {
+        return Objects.requireNonNullElseGet(brandAndModel, () -> brand.getName() + " " + model);
     }
-
 
     @Override
     public boolean equals(Object o) {

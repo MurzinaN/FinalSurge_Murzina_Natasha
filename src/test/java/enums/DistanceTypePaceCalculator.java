@@ -1,5 +1,6 @@
 package enums;
 
+
 public enum DistanceTypePaceCalculator {
     MILES("Miles"),
     KILOMETERS("Kilometers"),

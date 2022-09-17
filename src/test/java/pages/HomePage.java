@@ -24,9 +24,9 @@ public class HomePage extends BasePage {
     }
 
 
-    @Step("Ñhecking the presence of user icon on display")
+    @Step("Checking the presence of user icon on display")
     public boolean isUserIconDisplayed() {
-        log.info("Ñhecking the presence of user icon on display");
+        log.info("Checking the presence of user icon on display");
         return driver.findElement(USER_ICON).isDisplayed();
     }
 

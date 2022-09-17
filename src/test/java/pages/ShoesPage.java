@@ -1,5 +1,6 @@
 package pages;
 
+ 
 import enums.DistanceTypeShoes;
 import enums.ShoeSize;
 import io.qameta.allure.Step;
@@ -29,9 +30,10 @@ public class ShoesPage extends BasePage {
 
     }
 
-    @Step("Filling form NewShoe with recived data")
+
+    @Step("Filling form NewShoe with received data")
     public NewShoe getNewShoeInfo(String shoeName) {
-        log.info("Filling form NewShoe with recived data");
+        log.info("Filling form NewShoe with received data");
         NewShoe.NewShoeBuilder newShoeBuilder = NewShoe.builder();
         String text = driver.findElement(By.xpath(String.format(NAME_LOCATOR, shoeName))).getText();
         String[] textSplit = text.split("\n");

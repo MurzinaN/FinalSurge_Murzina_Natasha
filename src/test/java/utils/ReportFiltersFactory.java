@@ -3,6 +3,7 @@ package utils;
 import enums.ActivityType;
 import models.Report;
 
+
 public class ReportFiltersFactory {
     public static Report getReportFilters() {
         return Report.builder()

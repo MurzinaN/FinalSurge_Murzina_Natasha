@@ -9,7 +9,7 @@ pipeline {
     }
 
     parameters {
-     gitParameter branchFilter: 'origin/(.*)', defaultValue: 'main', name: 'BRANCH', type: 'PT_BRANCH'
+     gitParameter branchFilter: 'origin/(.*)', defaultValue: 'feature_4', name: 'BRANCH', type: 'PT_BRANCH'
      choice(name: 'SUITE_NAME', choices: ['allTests.xml', 'smokeTest.xml', 'negativeTest.xml', 'regressionTest.xml'], description: 'Choice suiteXmlFile')
      choice(name: 'BROWSER', choices: ['chrome', 'firefox'], description: 'Choice browser')
     }

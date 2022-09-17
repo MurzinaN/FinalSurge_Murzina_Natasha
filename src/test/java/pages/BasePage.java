@@ -32,6 +32,7 @@ public abstract class BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
+
     public void waitForElementClickable(By locator) {
         wait.until(ExpectedConditions.elementToBeClickable(locator));
     }

@@ -9,8 +9,9 @@ public class UpdateActivityType {
             type = type.replace("    -", "");
             type = type.replace(": ", " - ");
         }
-        List<String> expectedTypes = new ArrayList<String>();
-        for (int i = 0; i < numbers; i++) {
+
+        List<String> expectedTypes = new ArrayList<>();
+        for (int i=0; i<numbers; i++){
             expectedTypes.add(type);
         }
         return expectedTypes;

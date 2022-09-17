@@ -1,5 +1,6 @@
 package enums;
 
+
 public enum PaceType {
     MIN_MI("min/mi"),
     MIN_KM("min/km"),

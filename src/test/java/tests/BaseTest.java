@@ -22,6 +22,7 @@ public class BaseTest {
     protected HomePage homePage;
     protected LogoutPage logoutPage;
 
+
     @BeforeClass(alwaysRun = true)
     public void setUp(ITestContext testContext) throws Exception {
         String browserName = System.getProperty("browser", "chrome");

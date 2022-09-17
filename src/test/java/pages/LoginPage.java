@@ -42,19 +42,19 @@ public class LoginPage extends BasePage {
         driver.findElement(loginButton).click();
     }
 
-    @Step("Ñhecking the presence of error message on display")
+    @Step("Checking the presence of error message on display")
     public boolean isErrorMessageForEmailDisplayed() {
         log.info("Checking the presence of error message on display");
         return driver.findElement(errorMessageForEmail).isDisplayed();
     }
 
-    @Step("Ñhecking the presence of error message on display")
+    @Step("Checking the presence of error message on display")
     public String getErrorMessageForEmailText() {
         log.info("Checking the presence of error message on display");
         return driver.findElement(errorMessageForEmail).getText();
     }
 
-    @Step("Ñhecking the presence of error message on display")
+    @Step("Checking the presence of error message on display")
     public boolean isErrorMessageForFormDisplayed() {
         log.info("Checking the presence of error message on display");
         return driver.findElement(errorMessageForForm).isDisplayed();

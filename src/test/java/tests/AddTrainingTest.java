@@ -1,6 +1,5 @@
 package tests;
 
-
 import io.qameta.allure.Description;
 import models.WorkoutQuick;
 import org.testng.Assert;

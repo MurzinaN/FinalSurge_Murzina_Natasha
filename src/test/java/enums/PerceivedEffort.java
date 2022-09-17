@@ -1,6 +1,5 @@
 package enums;
 
-
 public enum PerceivedEffort {
     SELECT("Select..."),
     VERY_LIGHT_1("1 (Very Light)"),
