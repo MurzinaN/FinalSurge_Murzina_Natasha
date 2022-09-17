@@ -8,7 +8,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
-
 @Log4j2
 public class WorkoutDetailsPage extends BasePage {
     private final static By WORKOUT_NAME_LOCATOR = By.xpath("//div[@class='formSep']/descendant::div[contains(@style, 'clear:')]");
@@ -30,6 +29,7 @@ public class WorkoutDetailsPage extends BasePage {
     public void waitForPageLoaded() {
 
     }
+
     @Step("Filling form WorkoutQuick with received data")
     public WorkoutQuick getWorkoutQuickInfo() {
         log.info("Filling form WorkoutQuick with received data");
@@ -86,7 +86,7 @@ public class WorkoutDetailsPage extends BasePage {
             workoutQuickBuilder.perceivedEffort(PerceivedEffort.fromString(perceivedEffort));
         }
         if (isElementPresentByLocator(POST_WORKOUT_LOCATOR)) {
-            if (!driver.findElement(POST_WORKOUT_NOTES_LOCATOR).isDisplayed()){
+            if (!driver.findElement(POST_WORKOUT_NOTES_LOCATOR).isDisplayed()) {
                 driver.findElement(POST_WORKOUT_LOCATOR).click();
             }
             String postWorkoutNotesResults = driver.findElement(POST_WORKOUT_NOTES_LOCATOR).getText();
@@ -97,3 +97,4 @@ public class WorkoutDetailsPage extends BasePage {
     }
 
 }
+

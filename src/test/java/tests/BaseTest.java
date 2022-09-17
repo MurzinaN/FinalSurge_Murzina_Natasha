@@ -14,7 +14,6 @@ import utils.PropertyReader;
 
 import java.util.concurrent.TimeUnit;
 
-
 public class BaseTest {
     protected final static String EMAIL = System.getenv().getOrDefault("EMAIL", PropertyReader.getProperty("finalSurge.email"));
     protected final static String PASSWORD = System.getenv().getOrDefault("PASSWORD", PropertyReader.getProperty("finalSurge.password"));
@@ -54,3 +53,4 @@ public class BaseTest {
         this.driver.quit();
     }
 }
+

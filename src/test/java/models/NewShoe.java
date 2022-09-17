@@ -24,7 +24,7 @@ public class NewShoe {
     private String notes;
     private String brandAndModel;
 
-    public String getBrandAndModel() {
+     public String getBrandAndModel() {
         return Objects.requireNonNullElseGet(brandAndModel, () -> brand.getName() + " " + model);
     }
 

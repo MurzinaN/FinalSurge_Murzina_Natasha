@@ -75,5 +75,4 @@ public class CalendarPage extends BasePage {
         driver.findElement(CALENDAR_TRAINING_BUTTON_LOCATOR).click();
     }
 
-
 }

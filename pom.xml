@@ -67,7 +67,6 @@
         <maven.compiler.target>18</maven.compiler.target>
         <aspectj.version>1.9.8</aspectj.version>
     </properties>
-
     <build>
         <plugins>
             <plugin>

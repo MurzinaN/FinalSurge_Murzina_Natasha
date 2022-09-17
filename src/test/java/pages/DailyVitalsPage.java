@@ -16,7 +16,7 @@ import java.util.List;
 
 
 @Log4j2
-public class DailyVitalsPage extends BasePage{
+public class DailyVitalsPage extends BasePage {
     private final static String DATE_LOCATOR = "//a[text()='%s/%s/%s']";
     private final static String DATA_LOCATOR = "//a[text()='%s/%s/%s']/parent::td/following-sibling::td";
     private final static String NOTES_LOCATOR = "//a[text()='%s/%s/%s']/parent::td/following-sibling::td/span";
@@ -31,24 +31,27 @@ public class DailyVitalsPage extends BasePage{
     @Override
     public void waitForPageLoaded() {
     }
+
     @Step("Select data display interval: {name}")
-    public void selectPastDays(String name){
+    public void selectPastDays(String name) {
         log.info("Select data display interval");
         WebElement dropdownElement = driver.findElement(PAST_DAYS_LOCATOR);
         Select select = new Select(dropdownElement);
         select.selectByVisibleText(name);
 
     }
-    @Step("Choice date for input daily vitals")
-    public void clickDate(int month, int day, int year){
-        log.info("Choice date for input daily vitals");
+
+    @Step("Choise date for input daily vitals")
+    public void clickDate(int month, int day, int year) {
+        log.info("Choise date for input daily vitals");
         driver.findElement(By.xpath(String.format(DATE_LOCATOR, month, day, year))).click();
     }
-    @Step("Filling form DailyVitals with received data")
+
+    @Step("Filling form DailyVitals with recived data")
     public DailyVitals getDailyVitalsInfo(int month, int day, int year) {
         log.info("Filling form DailyVitals with received data");
         DailyVitals.DailyVitalsBuilder dailyVitalsBuilder = DailyVitals.builder();
-        List<WebElement> allItem= driver.findElements(By.xpath(String.format(DATA_LOCATOR, month, day, year)));
+        List<WebElement> allItem = driver.findElements(By.xpath(String.format(DATA_LOCATOR, month, day, year)));
         String steps = allItem.get(0).getText();
         if (steps != "") {
             dailyVitalsBuilder.steps(steps);
@@ -137,13 +140,13 @@ public class DailyVitalsPage extends BasePage{
         }
         return dailyVitalsBuilder.build();
     }
+
     @Step("Click 'Delete'")
-    public void clickDelete(){
+    public void clickDelete() {
         log.info("Click 'Delete'");
         driver.findElement(DELETE_LOCATOR).click();
         WebElement ok = driver.findElement(OK_BUTTON_LOCATOR);
         jsClick(ok);
     }
-
 
 }

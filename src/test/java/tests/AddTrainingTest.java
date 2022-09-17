@@ -59,7 +59,6 @@ public class AddTrainingTest extends BaseTest {
         };
     }
 
-
     @AfterMethod(alwaysRun = true)
     public void clearDataAddTraining() {
         calendarPage.backToCalendar();
@@ -70,3 +69,4 @@ public class AddTrainingTest extends BaseTest {
     }
 
 }
+

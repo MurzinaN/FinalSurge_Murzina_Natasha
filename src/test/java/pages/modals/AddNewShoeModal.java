@@ -74,3 +74,4 @@ public class AddNewShoeModal extends BaseModal {
         driver.findElement(ADD_SHOE_BUTTON_LOCATOR).click();
     }
 }
+

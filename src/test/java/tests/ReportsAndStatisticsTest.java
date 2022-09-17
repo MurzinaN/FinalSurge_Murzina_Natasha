@@ -1,6 +1,6 @@
 package tests;
 
-
+ 
 import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -19,7 +19,6 @@ public class ReportsAndStatisticsTest extends BaseTest {
     private HomePage homePage;
     private AthleteWorkoutReportPage athleteWorkoutReportPage;
     private ReportFiltersModal reportFiltersModal;
-
     @BeforeClass(alwaysRun = true)
     public void initialise() {
         homePage = new HomePage(driver);
