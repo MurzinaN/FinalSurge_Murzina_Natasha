@@ -18,7 +18,6 @@ public class ReportsAndStatisticsTest extends BaseTest {
     private HomePage homePage;
     private AthleteWorkoutReportPage athleteWorkoutReportPage;
     private ReportFiltersModal reportFiltersModal;
-
     @BeforeClass(alwaysRun = true)
     public void initialise() {
         homePage = new HomePage(driver);

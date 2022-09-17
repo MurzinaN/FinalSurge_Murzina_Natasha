@@ -52,7 +52,6 @@ public class HomePage extends BasePage {
         driver.findElement(By.xpath(String.format(MENU_LOCATOR, subItem))).click();
     }
 
-
     @Step("Click 'Others Calculators'")
     public void clickOthersCalculatorsButton() {
         log.info("Click 'Others Calculators'");

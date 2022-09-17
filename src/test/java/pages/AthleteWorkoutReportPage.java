@@ -41,3 +41,4 @@ public class AthleteWorkoutReportPage extends BasePage {
 
 }
 
+

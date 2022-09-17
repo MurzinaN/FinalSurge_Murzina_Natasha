@@ -6,7 +6,6 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import utils.AllureUtils;
 
-
 @Log4j2
 public class TestListener implements ITestListener {
     @Override

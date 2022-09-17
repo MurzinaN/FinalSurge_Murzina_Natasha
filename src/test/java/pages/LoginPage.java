@@ -78,3 +78,4 @@ public class LoginPage extends BasePage {
         driver.get(URL);
     }
 }
+

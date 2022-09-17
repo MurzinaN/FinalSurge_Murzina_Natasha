@@ -9,7 +9,6 @@ import pages.HomePage;
 import pages.modals.DailyVitalsAddModal;
 import utils.DailyVitalsFactory;
 
-
 public class DailyVitalsTest extends BaseTest {
     public final static String ITEM_NAVIGATION_MENU = "Daily Vitals";
     public final static String ERROR_MESSAGE_SLEEP_HOURS = "*Sleep Hours cannot be greater than 24.00.";

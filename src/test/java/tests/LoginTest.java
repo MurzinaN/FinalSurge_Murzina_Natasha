@@ -5,7 +5,6 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-
 public class LoginTest extends BaseTest {
     protected final static String EXPECTED_ERROR = "Invalid login credentials. Please try again.";
     protected final static String EXPECTED_LOGOUT_MESSAGE = "You have been successfully logged out of the system.";
