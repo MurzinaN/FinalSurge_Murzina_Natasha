@@ -8,7 +8,6 @@ import enums.WeightType;
 import models.DailyVitals;
 
 
-
 public class DailyVitalsFactory {
 
     public static DailyVitals getDailyVitalsAllData() {

@@ -30,3 +30,4 @@ public class LogoutPage extends BasePage {
         return driver.findElement(LOGOUT_MESSAGE).getText();
     }
 }
+

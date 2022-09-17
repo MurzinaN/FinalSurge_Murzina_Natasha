@@ -1,6 +1,5 @@
 package pages;
 
-import enums.Brand;
 import enums.DistanceTypeShoes;
 import enums.ShoeSize;
 import io.qameta.allure.Step;
@@ -9,13 +8,10 @@ import models.NewShoe;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.yaml.snakeyaml.scanner.Scanner;
-
-import java.util.List;
 
 
 @Log4j2
-public class ShoesPage extends BasePage{
+public class ShoesPage extends BasePage {
     private final static String NAME_LOCATOR = "//a[text()='%s']/ancestor::strong/parent::td";
     private final static String DATA_LOCATOR = "//a[text()='%s']/ancestor::strong/parent::td/descendant::span/strong[contains(text(),'%s')]/parent::span";
     private final static String DISTANCE_ALERT_LOCATOR = "//a[text()='%s']/ancestor::strong/parent::td/descendant::span[contains(text(),'Alert')]";
@@ -23,6 +19,7 @@ public class ShoesPage extends BasePage{
     private final static String SHOE_NAME_LOCATOR = "//a[text()='%s']";
     private final static By DELETE_LOCATOR = By.xpath("//a[@id='del-shoe']");
     private final static By OK_BUTTON_LOCATOR = By.xpath("//a[@data-handler='1']");
+
     public ShoesPage(WebDriver driver) {
         super(driver);
     }
@@ -31,13 +28,14 @@ public class ShoesPage extends BasePage{
     public void waitForPageLoaded() {
 
     }
+
     @Step("Filling form NewShoe with recived data")
     public NewShoe getNewShoeInfo(String shoeName) {
         log.info("Filling form NewShoe with recived data");
         NewShoe.NewShoeBuilder newShoeBuilder = NewShoe.builder();
         String text = driver.findElement(By.xpath(String.format(NAME_LOCATOR, shoeName))).getText();
         String[] textSplit = text.split("\n");
-        String textReplace = textSplit[0].replace(shoeName+" ", "");
+        String textReplace = textSplit[0].replace(shoeName + " ", "");
         textReplace = textReplace.replace("(", "");
         textReplace = textReplace.replace(")", "");
 
@@ -73,8 +71,9 @@ public class ShoesPage extends BasePage{
         }
         return newShoeBuilder.build();
     }
+
     @Step("Click 'Delete'")
-    public void clickDelete(String shoeName){
+    public void clickDelete(String shoeName) {
         log.info("Click 'Delete'");
         driver.findElement(By.xpath(String.format(SHOE_NAME_LOCATOR, shoeName))).click();
         driver.findElement(DELETE_LOCATOR).click();

@@ -45,3 +45,4 @@ public class OthersCalculatorsModal extends BaseModal {
         driver.findElement(PACE_CALCULATOR_BUTTON_LOCATOR).click();
     }
 }
+

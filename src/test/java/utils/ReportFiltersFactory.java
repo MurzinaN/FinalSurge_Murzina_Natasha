@@ -2,7 +2,6 @@ package utils;
 
 import enums.ActivityType;
 import models.Report;
-import models.WorkoutQuick;
 
 public class ReportFiltersFactory {
     public static Report getReportFilters() {

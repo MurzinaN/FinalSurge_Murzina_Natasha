@@ -25,12 +25,12 @@ public class NewShoe {
     private String brandAndModel;
 
     public String getBrandAndModel() {
-        if (brandAndModel !=null){return brandAndModel;}
-        else {
-           return brand.getName()+" "+model;
+        if (brandAndModel != null) {
+            return brandAndModel;
+        } else {
+            return brand.getName() + " " + model;
         }
     }
-
 
 
     @Override

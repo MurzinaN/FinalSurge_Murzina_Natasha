@@ -29,11 +29,13 @@ public class LoginPage extends BasePage {
         log.info("Set email");
         driver.findElement(emailInput).sendKeys(email);
     }
+
     @Step("Set password: {password}")
     public void setPassword(String password) {
         log.info("Set password");
         driver.findElement(passwordInput).sendKeys(password);
     }
+
     @Step("Click 'Login' button")
     public void clickLoginButton() {
         log.info("Click 'Login' button");
@@ -45,6 +47,7 @@ public class LoginPage extends BasePage {
         log.info("Checking the presence of error message on display");
         return driver.findElement(errorMessageForEmail).isDisplayed();
     }
+
     @Step("Ñhecking the presence of error message on display")
     public String getErrorMessageForEmailText() {
         log.info("Checking the presence of error message on display");
@@ -56,6 +59,7 @@ public class LoginPage extends BasePage {
         log.info("Checking the presence of error message on display");
         return driver.findElement(errorMessageForForm).isDisplayed();
     }
+
     @Step("Getting the text of the error message")
     public String getErrorMessageForFormText() {
         log.info("Getting the text of the error message");
@@ -67,6 +71,7 @@ public class LoginPage extends BasePage {
         setPassword(password);
         clickLoginButton();
     }
+
     @Step("Entering url")
     public void open() {
         log.info("Entering url");

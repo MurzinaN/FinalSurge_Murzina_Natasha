@@ -22,3 +22,4 @@ public abstract class BaseModal extends BasePage {
         driver.findElement(SAVE_BUTTON).click();
     }
 }
+

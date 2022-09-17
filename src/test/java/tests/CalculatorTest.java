@@ -63,3 +63,4 @@ public class CalculatorTest extends BaseTest {
         Assert.assertTrue(paceCalculatorModal.isPaceSplitsTableRowsDisplayed(), "In table 'Pace Splits' with results should be datas");
     }
 }
+
